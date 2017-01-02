@@ -40,13 +40,18 @@ Page {
                 }
             }*/
             ComboBox {
+                //: Font size
                 label: qsTr("Schrëftgréisst")
                 currentIndex: appSettings.fontSize
 
                 menu: ContextMenu {
+                    //: Small font size
                     MenuItem { text: qsTr("Kleng") }
+                    //: Medium font size
                     MenuItem { text: qsTr("Mëttel") }
+                    //: Large font size
                     MenuItem { text: qsTr("Grouss") }
+                    //: Extra large font size
                     MenuItem { text: qsTr("Ech si voll") }
                     onActivated: appSettings.setValue("fontSize", index)
                 }

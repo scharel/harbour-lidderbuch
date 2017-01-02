@@ -11,7 +11,8 @@ class DataLocation : public QObject
     Q_OBJECT
     Q_PROPERTY(QString path READ path)
 public:
-    DataLocation(QObject* parent = 0) {
+    DataLocation(QObject* parent = 0) : QObject(parent)
+    {
         QDir dir(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
         if (!dir.exists()) {
             dir.mkpath(".");

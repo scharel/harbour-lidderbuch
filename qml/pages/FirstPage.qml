@@ -17,20 +17,24 @@ Page {
         PullDownMenu {
             busy: songModel.busy
             MenuItem {
+                //: Pulldown menu item to About page
                 text: qsTr("Iwwer d'App")
                 onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
             }
             MenuItem {
+                //: Pulldown menu item to Settings page
                 text: qsTr("Astellungen")
                 onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
             }
             MenuItem {
+                //: Refresh the content from ACEL API
                 text: qsTr("Aktualiséieren")
                 onClicked: songModel.update()
             }
         }
 
         header: PageHeader {
+            //: Page Header
             title: qsTr("ACEL Lidderbuch")
             /*SearchField {
             width: parent.width

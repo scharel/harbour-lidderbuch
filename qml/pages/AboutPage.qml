@@ -19,13 +19,39 @@ Page {
                 title: qsTr("Iwwer d'App")
             }
 
-            Label {
-                x: Theme.horizontalPageMargin
-                text: "© Scharel Clemens 2016"
+            Image {
+                source: "harbour-lidderbuch.png"
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: Theme.iconSizeExtraLarge
+                fillMode: Image.PreserveAspectFit
             }
-            Label {
+            Text {
                 x: Theme.horizontalPageMargin
-                text: "Content provided by ACEL"
+                width: parent.width - x
+                color: Theme.secondaryColor
+                linkColor: Theme.highlightColor
+                font.family: Theme.fontFamily
+                font.pixelSize: Theme.fontSizeMedium
+                wrapMode: Text.Wrap
+                onLinkActivated: Qt.openUrlExternally(link)
+                //: Disclaymer by ACEL
+                text: qsTr("Dës App benotzt Liddtexter vun der ACEL (<a href=\"https://acel.lu\">https://acel.lu</a>) mat Hëllef vun der AcelApi (<a href=\"https://github.com/AcelLuxembourg/AcelApi\">https://github.com/AcelLuxembourg/AcelApi</a>). D'ACEL ass net den Entwéckler an domadder och net Verantwortlech fir den Ënnerhalt vun der App.")
+            }
+            Separator {
+                width: parent.width
+                color: Theme.secondaryColor
+            }
+            Text {
+                x: Theme.horizontalPageMargin
+                width: parent.width - x
+                color: Theme.secondaryColor
+                linkColor: Theme.highlightColor
+                font.family: Theme.fontFamily
+                font.pixelSize: Theme.fontSizeMedium
+                wrapMode: Text.Wrap
+                onLinkActivated: Qt.openUrlExternally(link)
+                //: Possibilities to report issues
+                text: qsTr("Fehler oder Verbesserungsvirschléi kennen am Jolla Store oder op <a href=\"https://github.com/scharel/harbour-lidderbuch/issues\">GitHub</a> gemellt ginn.<br />© Scharel Clemens 2017")
             }
         }
 

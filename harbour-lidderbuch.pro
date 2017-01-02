@@ -41,7 +41,8 @@ DISTFILES += \
     qml/pages/AboutPage.qml \
     qml/pages/SettingsPage.qml \
     qml/pages/SongModel.qml \
-    qml/pages/SongPage.qml
+    qml/pages/SongPage.qml \
+    qml/cover/logo.png
 
 HEADERS += \
     datalocation.h
