@@ -2,31 +2,68 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
+    <name>AboutPage</name>
+    <message>
+        <source>Iwwer d&apos;App</source>
+        <extracomment>Header of the About page</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CoverPage</name>
     <message>
-        <source>My Cover</source>
-        <translation>Mein Cover</translation>
+        <source>ACEL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lidderbuch</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
-        <source>Show Page 2</source>
-        <translation>Zur Seite 2</translation>
+        <source>Iwwer d&apos;App</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>UI Template</source>
-        <translation>UI-Vorlage</translation>
+        <source>Astellungen</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hello Sailors</source>
-        <translation>Hallo Matrosen</translation>
+        <source>Aktualiséieren</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ACEL Lidderbuch</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>SongList</name>
+    <name>SettingsPage</name>
     <message>
-        <source>Songs</source>
+        <source>Astellungen</source>
+        <extracomment>Header of the settings page</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kleng</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mëttel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grouss</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ech si voll</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schrëftgréisst</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -14,8 +14,7 @@ TARGET = harbour-lidderbuch
 
 CONFIG += sailfishapp
 
-SOURCES += src/harbour-lidderbuch.cpp \
-    src/acelapi.cpp
+SOURCES += src/harbour-lidderbuch.cpp
 
 OTHER_FILES += qml/harbour-lidderbuch.qml \
     qml/cover/CoverPage.qml \
@@ -38,9 +37,11 @@ CONFIG += sailfishapp_i18n
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/harbour-lidderbuch-de.ts
 
-HEADERS += \
-    src/acelapi.h
-
 DISTFILES += \
-    qml/pages/SongList.qml
+    qml/pages/AboutPage.qml \
+    qml/pages/SettingsPage.qml \
+    qml/pages/SongModel.qml \
+    qml/pages/SongPage.qml
 
+HEADERS += \
+    datalocation.h
