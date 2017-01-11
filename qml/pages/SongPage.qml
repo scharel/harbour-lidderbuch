@@ -8,19 +8,20 @@ Page {
     ConfigurationGroup {
         id: appSettings
         path: "/apps/harbour-lidderbuch/settings"
-        property int appLanguage
+        //property int appLanguage
         property int fontSize
     }
 
     SilicaListView {
         anchors.fill: parent
 
-        /*PullDownMenu {
+        PullDownMenu {
             MenuItem {
-                text: qsTr("Details")
-                onClicked: pageStack.push(Qt.resolvedUrl("DetailsPage.qml"))
+                //: Show details
+                text: qsTr("Méi Informatiounen")
+                onClicked: pageStack.push(Qt.resolvedUrl("DetailsPage.qml"), {song: song})
             }
-        }*/
+        }
 
         header: PageHeader {
             title: song.name

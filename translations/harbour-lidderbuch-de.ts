@@ -32,6 +32,84 @@
     </message>
 </context>
 <context>
+    <name>DetailsPage</name>
+    <message>
+        <source>Nummer:</source>
+        <extracomment>Song number</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kategorie:</source>
+        <extracomment>Category of the song</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Joer:</source>
+        <extracomment>Release year of the song</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Am Browser opmaachen</source>
+        <extracomment>Open in browser</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auteuren</source>
+        <extracomment>Authors</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text:</source>
+        <extracomment>Lyrics author</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Melodie:</source>
+        <extracomment>Melody author</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <extracomment>Online features</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aart aweis:</source>
+        <extracomment>Way of the melody</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sprooch:</source>
+        <extracomment>Language of the text</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Latäin</source>
+        <extracomment>Latin language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lëtzebuergesch</source>
+        <extracomment>Luxembourgish language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Franséisch</source>
+        <extracomment>French language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Däitsch</source>
+        <extracomment>German language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Englesch</source>
+        <extracomment>English language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FirstPage</name>
     <message>
         <source>Iwwer d&apos;App</source>
@@ -84,6 +162,14 @@
     <message>
         <source>Schrëftgréisst</source>
         <extracomment>Font size</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SongPage</name>
+    <message>
+        <source>Méi Informatiounen</source>
+        <extracomment>Show details</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>

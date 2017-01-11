@@ -7,7 +7,7 @@ Page {
     ConfigurationGroup {
         id: appSettings
         path: "/apps/harbour-lidderbuch/settings"
-        property int appLanguage
+        //property int appLanguage
         property int fontSize
     }
 
