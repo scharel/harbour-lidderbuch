@@ -25,13 +25,14 @@ CoverBackground {
 
     }
 
-    /*CoverActionList {
+    CoverActionList {
         id: coverAction
 
         CoverAction {
             iconSource: "image://theme/icon-cover-search"
+            onTriggered: appWindow.doFocusOnSearch()
         }
-    }*/
+    }
 }
 
 

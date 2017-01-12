@@ -36,7 +36,7 @@ Page {
 
                 Row {
                     width: column.width
-                    spacing: Theme.paddingSmall
+                    spacing: Theme.paddingMedium
                     x: Theme.horizontalPageMargin
                     Label {
                         id: propertyLabel
@@ -54,31 +54,31 @@ Page {
 
             Loader {
                 //: Song number
-                property string propertyDesc: qsTr("Nummer:")
+                property string propertyDesc: qsTr("Nummer")
                 property var propertyValue: song.number
                 sourceComponent: { song.number? propertyComponent: null }
             }
             Loader {
                 //: Way of the melody
-                property string propertyDesc: qsTr("Aart aweis:")
+                property string propertyDesc: qsTr("Aart aweis")
                 property var propertyValue: song.way
                 sourceComponent: { song.way? propertyComponent: null }
             }
             Loader {
                 //: Language of the text
-                property string propertyDesc: qsTr("Sprooch:")
+                property string propertyDesc: qsTr("Sprooch")
                 property var propertyValue: language[song.language]? language[song.language]: song.language
                 sourceComponent: { song.language? propertyComponent: null }
             }
             Loader {
                 //: Category of the song
-                property string propertyDesc: qsTr("Kategorie:")
+                property string propertyDesc: qsTr("Kategorie")
                 property var propertyValue: song.category
                 sourceComponent: { song.category? propertyComponent: null }
             }
             Loader {
                 //: Release year of the song
-                property string propertyDesc: qsTr("Joer:")
+                property string propertyDesc: qsTr("Joer")
                 property var propertyValue: song.year
                 sourceComponent: { song.year? propertyComponent: null }
             }
@@ -90,13 +90,13 @@ Page {
             }
             Loader {
                 //: Lyrics author
-                property string propertyDesc: qsTr("Text:")
+                property string propertyDesc: qsTr("Text")
                 property var propertyValue: song.lyrics_author
                 sourceComponent: { song.lyrics_author? propertyComponent: null }
             }
             Loader {
                 //: Melody author
-                property string propertyDesc: qsTr("Melodie:")
+                property string propertyDesc: qsTr("Melodie")
                 property var propertyValue: song.melody_author
                 sourceComponent: { song.melody_author? propertyComponent: null }
             }

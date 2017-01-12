@@ -8,7 +8,14 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Wed Jan 12 2017 Scharel Clemens <harbour-lidderbuch@scharel.name> 1.0-1
+* Thu Jan 12 2017 Scharel Clemens <harbour-lidderbuch@scharel.name> 1.1-1
+- Added padding to the right side of the song page
+- Automatically attach details page to the page stack when opening song page
+- Moved update functionality to the settings page
+- Show time of last update in settings page
+- Added shortcut to the cover to search for songs
+
+* Wed Jan 11 2017 Scharel Clemens <harbour-lidderbuch@scharel.name> 1.0-1
 - Added details about songs
 - Ability to search for song numbers or names
 

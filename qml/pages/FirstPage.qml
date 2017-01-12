@@ -3,12 +3,9 @@ import Sailfish.Silica 1.0
 
 Page {
     id: songsPage
-
-    BusyIndicator {
-        id: busyIndicator
-        size: BusyIndicatorSize.Large
-        anchors.centerIn: parent
-        running: songModel.busy
+    function doFocusOnSearch() {
+        console.log("Should focus now")
+        searchField.forceActiveFocus()
     }
 
     SilicaListView {
@@ -26,41 +23,39 @@ Page {
                 text: qsTr("Astellungen")
                 onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
             }
-            MenuItem {
-                //: Refresh the content from ACEL API
-                text: qsTr("Aktualiséieren")
-                onClicked: songModel.update()
-            }
         }
 
         header: PageHeader {
             //: Page Header
             //title: qsTr("ACEL Lidderbuch")
             SearchField {
+                id: searchField
                 width: parent.width
                 //: Page Header
                 placeholderText: qsTr("ACEL Lidderbuch")
-                //placeholderColor: Theme.highlightColor
-                enabled: !busyIndicator.running
                 onTextChanged: {
-                    //console.log("Search: " + text)
                     songModel.search(text)
+                }
+                Connections {
+                    target: appWindow
+                    onFocusOnSearch: searchField.forceActiveFocus()
                 }
                 EnterKey.iconSource: "image://theme/icon-m-enter-close"
                 EnterKey.onClicked: focus = false
             }
         }
 
-        model: SongModel {
-            id: songModel
-        }
+        model: songModel
         currentIndex: -1
 
         delegate: ListItem {
             id: song
             width: parent.width
             height: Theme.itemSizeSmall
-            onClicked: pageStack.push(Qt.resolvedUrl("SongPage.qml"), {song: model})
+            onClicked: {
+                pageStack.push(Qt.resolvedUrl("SongPage.qml"), {song: model})
+                pageStack.pushAttached(Qt.resolvedUrl("DetailsPage.qml"), {song: model})
+            }
 
             Row {
                 width: parent.width

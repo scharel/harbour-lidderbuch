@@ -5,6 +5,8 @@ ListModel {
     property string url: "https://acel.lu/api/v1/songs"
     property string json: ""
     property bool busy: false
+    property var lastUpdate
+
     onJsonChanged: search("")
 
     function search(query) {
@@ -44,6 +46,7 @@ ListModel {
                 var filePut = new XMLHttpRequest
                 filePut.open("PUT", file)
                 filePut.send(json)
+                lastUpdate = new Date().toLocaleString(Qt.locale("de_LU"), "d.MM.yy h:mm")
                 busy = false
             }
         }

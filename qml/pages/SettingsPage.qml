@@ -1,15 +1,8 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import org.nemomobile.configuration 1.0
 
 Page {
     id: settingsPage
-    ConfigurationGroup {
-        id: appSettings
-        path: "/apps/harbour-lidderbuch/settings"
-        //property int appLanguage
-        property int fontSize
-    }
 
     SilicaFlickable {
         anchors.fill: parent
@@ -19,28 +12,47 @@ Page {
             id: column
 
             width: parent.width
-            //spacing: Theme.paddingLarge
+            spacing: Theme.paddingLarge
 
             PageHeader {
                 //: Header of the settings page
                 title: qsTr("Astellungen")
             }
 
-            /*ComboBox {
-                label: qsTr("Language")
-                currentIndex: appSettings.appLanguage
-
-                menu: ContextMenu {
-                    MenuItem { text: qsTr("System") }
-                    MenuItem { text: qsTr("L\u00ebtzebuergesch") }
-                    MenuItem { text: qsTr("English") }
-                    MenuItem { text: qsTr("Deutsch") }
-                    MenuItem { text: qsTr("Francais") }
-                    onActivated: appSettings.setValue("appLanguage", index)
+            SectionHeader {
+                //: Section to update the song texts
+                text: qsTr("Aktualiséieren")
+            }
+            Row {
+                width: column.width
+                spacing: Theme.paddingMedium
+                x: Theme.horizontalPageMargin
+                Label {
+                    id: updateLabel
+                    //: DateTime of the last update
+                    text: qsTr("Leschten Update")
+                    color: Theme.secondaryColor
                 }
-            }*/
+                Label {
+                    //: DateTime shown while updating
+                    text: songModel.busy? qsTr("Aktualiséieren..."): appSettings.lastUpdate
+                    color: Theme.highlightColor
+                }
+            }
+            Button {
+                //: Update song texts
+                text: qsTr("Lo aktualiséierten")
+                anchors.horizontalCenter: parent.horizontalCenter
+                down: songModel.busy
+                onClicked: songModel.update()
+            }
+
+            SectionHeader {
+                //: Section to manipulate the look of the SongPage
+                text: qsTr("Ausgesinn")
+            }
             ComboBox {
-                //: Font size
+                //: Font size for the song page
                 label: qsTr("Schrëftgréisst")
                 currentIndex: appSettings.fontSize
 

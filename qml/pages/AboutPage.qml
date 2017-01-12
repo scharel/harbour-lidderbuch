@@ -23,7 +23,7 @@ Page {
                 x: Theme.horizontalPageMargin
                 //: App version
                 Label { text: qsTr("Versioun: "); color: Theme.secondaryColor }
-                Label { text: "1.0-1" }
+                Label { text: "1.1-1" }
             }
 
             Image {

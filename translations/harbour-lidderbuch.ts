@@ -39,21 +39,6 @@
 <context>
     <name>DetailsPage</name>
     <message>
-        <source>Nummer:</source>
-        <extracomment>Song number</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Kategorie:</source>
-        <extracomment>Category of the song</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Joer:</source>
-        <extracomment>Release year of the song</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Am Browser opmaachen</source>
         <extracomment>Open in browser</extracomment>
         <translation type="unfinished"></translation>
@@ -64,28 +49,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Text:</source>
-        <extracomment>Lyrics author</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Melodie:</source>
-        <extracomment>Melody author</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Online</source>
         <extracomment>Online features</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Aart aweis:</source>
-        <extracomment>Way of the melody</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Sprooch:</source>
-        <extracomment>Language of the text</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -113,6 +78,41 @@
         <extracomment>English language</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Nummer</source>
+        <extracomment>Song number</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aart aweis</source>
+        <extracomment>Way of the melody</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sprooch</source>
+        <extracomment>Language of the text</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kategorie</source>
+        <extracomment>Category of the song</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Joer</source>
+        <extracomment>Release year of the song</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <extracomment>Lyrics author</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Melodie</source>
+        <extracomment>Melody author</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>
@@ -124,11 +124,6 @@
     <message>
         <source>Astellungen</source>
         <extracomment>Pulldown menu item to Settings page</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Aktualiséieren</source>
-        <extracomment>Refresh the content from ACEL API</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -166,15 +161,32 @@
     </message>
     <message>
         <source>Schrëftgréisst</source>
-        <extracomment>Font size</extracomment>
+        <extracomment>Font size for the song page</extracomment>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>SongPage</name>
     <message>
-        <source>Méi Informatiounen</source>
-        <extracomment>Show details</extracomment>
+        <source>Aktualiséieren</source>
+        <extracomment>Section to update the song texts</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ausgesinn</source>
+        <extracomment>Section to manipulate the look of the SongPage</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aktualiséieren...</source>
+        <extracomment>DateTime shown while updating</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lo aktualiséierten</source>
+        <extracomment>Update song texts</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leschten Update</source>
+        <extracomment>DateTime of the last update</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>
