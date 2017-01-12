@@ -19,6 +19,13 @@ Page {
                 title: qsTr("Iwwer d'App")
             }
 
+            Row {
+                x: Theme.horizontalPageMargin
+                //: App version
+                Label { text: qsTr("Versioun: "); color: Theme.secondaryColor }
+                Label { text: "1.0-1" }
+            }
+
             Image {
                 source: "harbour-lidderbuch.png"
                 anchors.horizontalCenter: parent.horizontalCenter

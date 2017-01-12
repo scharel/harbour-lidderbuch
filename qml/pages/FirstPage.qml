@@ -35,21 +35,26 @@ Page {
 
         header: PageHeader {
             //: Page Header
-            title: qsTr("ACEL Lidderbuch")
-            /*SearchField {
-            width: parent.width
-            placeholderText: qsTr("Songs")
-            enabled: !busyIndicator.running
-
-            onTextChanged: {
-                console.log("Search: " + text)
-                //songsModel.query = text !== "" ? "$.[?(@.name like '" + text + "')]" : ""
-            }*/
+            //title: qsTr("ACEL Lidderbuch")
+            SearchField {
+                width: parent.width
+                //: Page Header
+                placeholderText: qsTr("ACEL Lidderbuch")
+                //placeholderColor: Theme.highlightColor
+                enabled: !busyIndicator.running
+                onTextChanged: {
+                    //console.log("Search: " + text)
+                    songModel.search(text)
+                }
+                EnterKey.iconSource: "image://theme/icon-m-enter-close"
+                EnterKey.onClicked: focus = false
+            }
         }
 
         model: SongModel {
             id: songModel
         }
+        currentIndex: -1
 
         delegate: ListItem {
             id: song

@@ -18,6 +18,11 @@
         <extracomment>Possibilities to report issues</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Versioun: </source>
+        <extracomment>App version</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>

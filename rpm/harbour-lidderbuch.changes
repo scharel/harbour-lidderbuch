@@ -8,7 +8,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Sun Apr 13 2014 Jack Tar <jack.tar@example.com> 0.0.1-1
-- Scrubbed the deck
-- Hoisted the sails
+* Wed Jan 12 2017 Scharel Clemens <harbour-lidderbuch@scharel.name> 1.0-1
+- Added details about songs
+- Ability to search for song numbers or names
 
+* Mon Jan 02 2017 Scharel Clemens <harbour-lidderbuch@scharel.name> 0.1-1
+- First release

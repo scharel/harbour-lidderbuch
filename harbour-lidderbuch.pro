@@ -19,7 +19,6 @@ SOURCES += src/harbour-lidderbuch.cpp
 OTHER_FILES += qml/harbour-lidderbuch.qml \
     qml/cover/CoverPage.qml \
     qml/pages/FirstPage.qml \
-    rpm/harbour-lidderbuch.changes.in \
     rpm/harbour-lidderbuch.spec \
     rpm/harbour-lidderbuch.yaml \
     translations/*.ts \
@@ -35,7 +34,7 @@ CONFIG += sailfishapp_i18n
 # planning to localize your app, remember to comment out the
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
-TRANSLATIONS += translations/harbour-lidderbuch-de.ts
+#TRANSLATIONS += translations/harbour-lidderbuch-de.ts
 
 DISTFILES += \
     qml/pages/AboutPage.qml \
@@ -43,7 +42,8 @@ DISTFILES += \
     qml/pages/SongModel.qml \
     qml/pages/SongPage.qml \
     qml/cover/logo.png \
-    qml/pages/DetailsPage.qml
+    qml/pages/DetailsPage.qml \
+    rpm/harbour-lidderbuch.changes
 
 HEADERS += \
     datalocation.h
