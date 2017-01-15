@@ -21,8 +21,9 @@ Page {
 
             Row {
                 x: Theme.horizontalPageMargin
+                spacing: Theme.paddingMedium
                 //: App version
-                Label { text: qsTr("Versioun: "); color: Theme.secondaryColor }
+                Label { text: qsTr("Versioun"); color: Theme.secondaryColor }
                 Label { text: "1.1-2"; color: Theme.highlightColor }
             }
 

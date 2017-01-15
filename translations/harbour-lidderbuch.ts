@@ -19,7 +19,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Versioun: </source>
+        <source>Versioun</source>
         <extracomment>App version</extracomment>
         <translation type="unfinished"></translation>
     </message>
@@ -29,10 +29,6 @@
     <message>
         <source>Lidderbuch</source>
         <extracomment>App name on the cover</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>ACEL</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
