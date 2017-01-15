@@ -8,6 +8,12 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun Jan 15 2017 Scharel Clemens <harbour-lidderbuch@scharel.name> 1.1-2
+- Placeholder on first page incase no data is available
+- Correct padding on right side of the first page
+- Busy indicator while updating the data
+- Use Silica StandardPaths component instead of own C++ Object
+
 * Thu Jan 12 2017 Scharel Clemens <harbour-lidderbuch@scharel.name> 1.1-1
 - Added padding to the right side of the song page
 - Automatically attach details page to the page stack when opening song page

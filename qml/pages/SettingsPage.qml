@@ -34,9 +34,14 @@ Page {
                     color: Theme.secondaryColor
                 }
                 Label {
+                    id: timeLabel
                     //: DateTime shown while updating
-                    text: songModel.busy? qsTr("Aktualiséieren..."): appSettings.lastUpdate
+                    text: appSettings.lastUpdate
                     color: Theme.highlightColor
+                }
+                BusyIndicator {
+                    running: songModel.busy
+                    size: BusyIndicatorSize.Small
                 }
             }
             Button {

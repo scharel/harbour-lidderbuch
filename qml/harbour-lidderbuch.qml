@@ -15,13 +15,13 @@ ApplicationWindow
     property var songModel: SongModel {
         onLastUpdateChanged: appSettings.setValue("lastUpdate", lastUpdate)
     }
-    signal focusOnSearch(bool focus)
+    signal coverSearchTriggered()
     function doFocusOnSearch() {
         while (pageStack.depth > 1)
             pageStack.pop()
         activate()
         pageStack.completeAnimation()
-        focusOnSearch(true)
+        coverSearchTriggered()
     }
 
     initialPage: Component { FirstPage{ } }

@@ -131,6 +131,16 @@
         <extracomment>Page Header</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Keng Lidder verfügbar!</source>
+        <extracomment>No songs available</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An den Astellungen kennen d&apos;Lidder nei erofgeluede ginn.</source>
+        <extracomment>Use the settings page to download content</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>
@@ -172,11 +182,6 @@
     <message>
         <source>Ausgesinn</source>
         <extracomment>Section to manipulate the look of the SongPage</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Aktualiséieren...</source>
-        <extracomment>DateTime shown while updating</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>

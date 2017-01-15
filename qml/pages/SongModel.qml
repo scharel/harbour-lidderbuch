@@ -1,7 +1,8 @@
 import QtQuick 2.0
+import Sailfish.Silica 1.0
 
 ListModel {
-    property string file: dataLocation.path + "/songs.json"
+    property string file: StandardPaths.data + "/songs.json"
     property string url: "https://acel.lu/api/v1/songs"
     property string json: ""
     property bool busy: false
@@ -41,12 +42,18 @@ ListModel {
         apiReq.open("GET", url)
         apiReq.onreadystatechange = function() {
             if (apiReq.readyState === XMLHttpRequest.DONE) {
-                console.log("Loaded songs from api")
-                json = apiReq.responseText
-                var filePut = new XMLHttpRequest
-                filePut.open("PUT", file)
-                filePut.send(json)
-                lastUpdate = new Date().toLocaleString(Qt.locale("de_LU"), "d.MM.yy h:mm")
+                if (apiReq.status === 200) {
+                    console.log("Loaded songs from api")
+                    json = apiReq.responseText
+                    var filePut = new XMLHttpRequest
+                    filePut.open("PUT", file)
+                    filePut.send(json)
+                    lastUpdate = new Date().toLocaleString(Qt.locale("de_LU"), "d.MM.yy h:mm")
+                }
+                else {
+                    console.log("Error loading songs from api")
+                }
+
                 busy = false
             }
         }

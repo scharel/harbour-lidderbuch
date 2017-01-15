@@ -45,5 +45,4 @@ DISTFILES += \
     qml/pages/DetailsPage.qml \
     rpm/harbour-lidderbuch.changes
 
-HEADERS += \
-    datalocation.h
+HEADERS +=

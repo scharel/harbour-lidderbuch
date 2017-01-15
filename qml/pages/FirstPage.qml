@@ -3,10 +3,7 @@ import Sailfish.Silica 1.0
 
 Page {
     id: songsPage
-    function doFocusOnSearch() {
-        console.log("Should focus now")
-        searchField.forceActiveFocus()
-    }
+    Component.onCompleted: console.log(StandardPaths.data)
 
     SilicaListView {
         anchors.fill: parent
@@ -38,7 +35,7 @@ Page {
                 }
                 Connections {
                     target: appWindow
-                    onFocusOnSearch: searchField.forceActiveFocus()
+                    onCoverSearchTriggered: searchField.forceActiveFocus()
                 }
                 EnterKey.iconSource: "image://theme/icon-m-enter-close"
                 EnterKey.onClicked: focus = false
@@ -58,9 +55,9 @@ Page {
             }
 
             Row {
-                width: parent.width
-                spacing: Theme.paddingMedium
                 x: Theme.horizontalPageMargin
+                width: parent.width - 2*x
+                spacing: Theme.paddingMedium
                 anchors.verticalCenter: parent.verticalCenter
                 Label {
                     id: songNumber
@@ -84,6 +81,14 @@ Page {
         section.criteria: ViewSection.FullString
         section.delegate: SectionHeader {
             text: section
+        }
+
+        ViewPlaceholder {
+            enabled: songModel.count === 0
+            //: No songs available
+            text: qsTr("Keng Lidder verfügbar!")
+            //: Use the settings page to download content
+            hintText: qsTr("An den Astellungen kennen d'Lidder nei erofgeluede ginn.")
         }
 
         VerticalScrollDecorator {}
