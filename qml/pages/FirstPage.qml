@@ -2,7 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Page {
-    id: songsPage
+    id: firstPage
     Component.onCompleted: console.log(StandardPaths.data)
 
     SilicaListView {
@@ -88,6 +88,7 @@ Page {
         }
 
         ViewPlaceholder {
+            verticalOffset: -2 * Theme.paddingLarge
             enabled: songModel.count === 0 && searchField.text !== ""
             //: No songs found with search function
             text: qsTr("Keng Lidder fonnt!")
