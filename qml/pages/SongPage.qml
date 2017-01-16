@@ -6,6 +6,7 @@ Page {
     property var song
 
     SilicaListView {
+        id: listView
         anchors.fill: parent
 
         header: PageHeader {
@@ -21,7 +22,7 @@ Page {
                 id: content
                 x: Theme.horizontalPageMargin
                 width: parent.width - 2*x
-                color: Theme.primaryColor
+                color: Theme.primaryColor //appSettings.fontColor
                 font.family: Theme.fontFamily
                 font.pixelSize: (appSettings.fontSize === 0) ? Theme.fontSizeSmall : (appSettings.fontSize === 1) ? Theme.fontSizeMedium : (appSettings.fontSize === 2) ? Theme.fontSizeLarge : (appSettings.fontSize === 3) ? Theme.fontSizeExtraLarge : Theme.fontSizeMedium
                 wrapMode: Text.Wrap
@@ -29,6 +30,6 @@ Page {
             }
         }
 
-        VerticalScrollDecorator {}
+        VerticalScrollDecorator { flickable: listView }
     }
 }

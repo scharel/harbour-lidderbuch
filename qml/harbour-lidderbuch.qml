@@ -11,6 +11,7 @@ ApplicationWindow
         path: "/apps/harbour-lidderbuch/settings"
         property string lastUpdate
         property int fontSize
+        property var fontColor
     }
     property var songModel: SongModel {
         onLastUpdateChanged: appSettings.setValue("lastUpdate", lastUpdate)
@@ -19,8 +20,8 @@ ApplicationWindow
     function doFocusOnSearch() {
         while (pageStack.depth > 1)
             pageStack.pop()
-        activate()
         pageStack.completeAnimation()
+        activate()
         coverSearchTriggered()
     }
 

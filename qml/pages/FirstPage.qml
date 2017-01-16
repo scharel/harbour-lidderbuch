@@ -6,6 +6,7 @@ Page {
     Component.onCompleted: console.log(StandardPaths.data)
 
     SilicaListView {
+        id: listView
         anchors.fill: parent
 
         PullDownMenu {
@@ -22,11 +23,12 @@ Page {
             }
         }
 
-        header: PageHeader {
+        Component {
+            id: searchField
+
             //: Page Header
             //title: qsTr("ACEL Lidderbuch")
             SearchField {
-                id: searchField
                 width: parent.width
                 //: Page Header
                 placeholderText: qsTr("ACEL Lidderbuch")
@@ -41,6 +43,8 @@ Page {
                 EnterKey.onClicked: focus = false
             }
         }
+
+        header: searchField
 
         model: songModel
         currentIndex: -1
@@ -84,13 +88,21 @@ Page {
         }
 
         ViewPlaceholder {
-            enabled: songModel.count === 0
+            enabled: songModel.count === 0 && searchField.text !== ""
+            //: No songs found with search function
+            text: qsTr("Keng Lidder fonnt!")
+            //: Try another search query
+            hintText: qsTr("Probéier eng aner Sich.")
+        }
+
+        ViewPlaceholder {
+            enabled: songModel.count === 0 && searchField.text === ""
             //: No songs available
             text: qsTr("Keng Lidder verfügbar!")
             //: Use the settings page to download content
             hintText: qsTr("An den Astellungen kennen d'Lidder nei erofgeluede ginn.")
         }
 
-        VerticalScrollDecorator {}
+        VerticalScrollDecorator { flickable: listView }
     }
 }

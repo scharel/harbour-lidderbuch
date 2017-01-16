@@ -137,6 +137,16 @@
         <extracomment>Use the settings page to download content</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Keng Lidder fonnt!</source>
+        <extracomment>No songs found with search function</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Probéier eng aner Sich.</source>
+        <extracomment>Try another search query</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>
