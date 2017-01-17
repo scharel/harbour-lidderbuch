@@ -14,7 +14,7 @@ Name:       harbour-lidderbuch
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    ACEL Lidderbuch
 Version:    1.1
-Release:    3
+Release:    4
 Group:      Qt/Qt
 License:    LICENSE
 URL:        http://example.org/

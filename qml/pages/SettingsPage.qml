@@ -5,6 +5,7 @@ Page {
     id: settingsPage
 
     SilicaFlickable {
+        id: silicaFlickable
         anchors.fill: parent
         contentHeight: column.height
 
@@ -51,7 +52,7 @@ Page {
                     //: Update song texts
                     text: qsTr("Lo aktualiséierten")
                     anchors.horizontalCenter: parent.horizontalCenter
-                    down: songModel.busy
+                    enabled: !songModel.busy
                     onClicked: songModel.update()
                 }
             }
@@ -79,33 +80,25 @@ Page {
                 }
             }
 
-            /*
             ComboBox {
-                //: Font color for the song page
-                label: qsTr("Schrëftfaarf")
-                //currentIndex: appSettings.fontColor
+                //: Colors for the song page
+                label: qsTr("Faarwen")
+                currentIndex: appSettings.colorTheme
 
                 menu: ContextMenu {
                     //: SailfishOS color theme
                     MenuItem { text: qsTr("Standard") }
-                    //: Choose custom color
-                    MenuItem { text: qsTr("Faarf eraussichen") }
-                    onActivated: {
-                        if (index === 0) {
-                            appSettings.setValue("fontColor", Theme.primaryColor)
-                        }
-                        else {
-                            var dialog = pageStack.push("Sailfish.Silica.ColorPickerDialog")
-                            dialog.accepted.connect(function() {
-                                appSettings.setValue("fontColor", dialog.color)
-                            })
-                        }
-                    }
+                    //: Dark color theme
+                    MenuItem { text: qsTr("Däischter") }
+                    //: Black on white color theme
+                    MenuItem { text: qsTr("Schwaarz op Wäiss") }
+                    //: Green on black color theme
+                    MenuItem { text: qsTr("Matrix") }
+                    onActivated: appSettings.setValue("colorTheme", index)
                 }
             }
-            */
         }
 
-        ScrollDecorator {  }
+        ScrollDecorator { }
     }
 }

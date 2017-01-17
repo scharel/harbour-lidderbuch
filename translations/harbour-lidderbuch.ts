@@ -200,5 +200,30 @@
         <extracomment>DateTime of the last update</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Faarwen</source>
+        <extracomment>Colors for the song page</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standard</source>
+        <extracomment>SailfishOS color theme</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schwaarz op Wäiss</source>
+        <extracomment>Black on white color theme</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Däischter</source>
+        <extracomment>Dark color theme</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Matrix</source>
+        <extracomment>Green on black color theme</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

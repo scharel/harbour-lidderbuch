@@ -11,7 +11,7 @@ ApplicationWindow
         path: "/apps/harbour-lidderbuch/settings"
         property string lastUpdate
         property int fontSize
-        property var fontColor
+        property var colorTheme
     }
     property var songModel: SongModel {
         onLastUpdateChanged: appSettings.setValue("lastUpdate", lastUpdate)
