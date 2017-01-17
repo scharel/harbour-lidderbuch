@@ -24,11 +24,12 @@ Page {
         }
 
         Component {
-            id: searchField
+            id: searchComponent
 
             //: Page Header
             //title: qsTr("ACEL Lidderbuch")
             SearchField {
+                id: searchField
                 width: parent.width
                 //: Page Header
                 placeholderText: qsTr("ACEL Lidderbuch")
@@ -44,7 +45,7 @@ Page {
             }
         }
 
-        header: searchField
+        header: searchComponent
 
         model: songModel
         currentIndex: -1
