@@ -3,7 +3,6 @@ import Sailfish.Silica 1.0
 
 Page {
     id: firstPage
-    Component.onCompleted: console.log(StandardPaths.data)
 
     SilicaListView {
         id: listView
@@ -24,12 +23,11 @@ Page {
         }
 
         Component {
-            id: searchComponent
+            id: searchField
 
             //: Page Header
             //title: qsTr("ACEL Lidderbuch")
             SearchField {
-                id: searchField
                 width: parent.width
                 //: Page Header
                 placeholderText: qsTr("ACEL Lidderbuch")
@@ -38,14 +36,14 @@ Page {
                 }
                 Connections {
                     target: appWindow
-                    onCoverSearchTriggered: searchField.forceActiveFocus()
+                    onCoverSearchTriggered: forceActiveFocus()
                 }
                 EnterKey.iconSource: "image://theme/icon-m-enter-close"
                 EnterKey.onClicked: focus = false
             }
         }
 
-        header: searchComponent
+        header: searchField
 
         model: songModel
         currentIndex: -1
@@ -53,7 +51,7 @@ Page {
         delegate: ListItem {
             id: song
             width: parent.width
-            height: Theme.itemSizeSmall
+            contentHeight: Theme.itemSizeSmall
             onClicked: {
                 pageStack.push(Qt.resolvedUrl("SongPage.qml"), {song: model})
                 pageStack.pushAttached(Qt.resolvedUrl("DetailsPage.qml"), {song: model})

@@ -39,7 +39,6 @@ Page {
                     }
                     Label {
                         id: timeLabel
-                        //: DateTime shown while updating
                         text: appSettings.lastUpdate
                         color: Theme.highlightColor
                     }
@@ -61,7 +60,6 @@ Page {
                 //: Section to manipulate the look of the SongPage
                 text: qsTr("Ausgesinn")
             }
-
             ComboBox {
                 //: Font size for the song page
                 label: qsTr("Schrëftgréisst")
@@ -79,7 +77,6 @@ Page {
                     onActivated: appSettings.setValue("fontSize", index)
                 }
             }
-
             ComboBox {
                 //: Colors for the song page
                 label: qsTr("Faarwen")
@@ -97,6 +94,17 @@ Page {
                     onActivated: appSettings.setValue("colorTheme", index)
                 }
             }
+
+            /*
+            SectionHeader {
+                text: "Debug"
+            }
+            Button {
+                text: "Reset"
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: appSettings.clear()
+            }
+            */
         }
 
         ScrollDecorator { }

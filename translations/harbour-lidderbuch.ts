@@ -226,4 +226,20 @@
         <translation type="unfinished"></translation>
     </message>
 </context>
+<context>
+    <name>SongPage</name>
+    <message>
+        <source>Weider Detailer iwwer d&apos;Lidd uweisen</source>
+        <extracomment>Show further details about the song</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>harbour-lidderbuch</name>
+    <message>
+        <source>nach ni</source>
+        <extracomment>Alternative text if no update time is available</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>

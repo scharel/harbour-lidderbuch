@@ -17,6 +17,8 @@ Page {
         'eng': qsTr("Englesch")
     }
 
+    onStatusChanged: if (status === PageStatus.Active) appSettings.setValue("interactionHint", false)
+
     SilicaFlickable {
         anchors.fill: parent
         contentHeight: column.height

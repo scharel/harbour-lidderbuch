@@ -8,7 +8,11 @@ ListModel {
     property bool busy: false
     property var lastUpdate
 
-    onJsonChanged: search("")
+    onJsonChanged: refresh()
+
+    function refresh() {
+        search("")
+    }
 
     function search(query) {
         clear()

@@ -7,11 +7,14 @@ import "cover"
 ApplicationWindow
 {
     id: appWindow
-    property var appSettings: ConfigurationGroup {
+    ConfigurationGroup {
+        id: appSettings
         path: "/apps/harbour-lidderbuch/settings"
-        property string lastUpdate
-        property int fontSize
-        property var colorTheme
+        //: Alternative text if no update time is available
+        property string lastUpdate: value("lastUpdate", qsTr("nach ni"))
+        property int fontSize: value("fontSize", 1)
+        property int colorTheme: value("colorTheme", 0)
+        property bool interactionHint: value("interactionHint", true)
     }
     property var songModel: SongModel {
         onLastUpdateChanged: appSettings.setValue("lastUpdate", lastUpdate)

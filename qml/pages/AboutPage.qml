@@ -24,7 +24,7 @@ Page {
                 spacing: Theme.paddingMedium
                 //: App version
                 Label { text: qsTr("Versioun"); color: Theme.secondaryColor }
-                Label { text: "1.1-4"; color: Theme.highlightColor }
+                Label { text: "1.1-5"; color: Theme.highlightColor }
             }
 
             Image {

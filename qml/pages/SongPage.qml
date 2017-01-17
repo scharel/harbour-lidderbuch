@@ -84,4 +84,19 @@ Page {
 
         VerticalScrollDecorator { flickable: listView }
     }
+
+    TouchInteractionHint {
+        id: hint
+        Component.onCompleted: if (appSettings.interactionHint) restart()
+        interactionMode: TouchInteraction.Swipe
+        direction: TouchInteraction.Left
+    }
+    InteractionHintLabel {
+        //: Show further details about the song
+        text: qsTr("Weider Detailer iwwer d'Lidd uweisen")
+        opacity: hint.running ? 1.0 : 0.0
+        Behavior on opacity { FadeAnimation {} }
+        width: parent.width
+        height: parent.height
+    }
 }
