@@ -47,31 +47,109 @@ Page {
         id: listView
         anchors.fill: parent
 
+        property int activeLine: -1
+        property int activeLineInParagraph: 0
+        onActiveLineChanged: {
+            //console.log("Active line: " + activeLine)
+
+            if (activeLine < 0) { // reset the line focus
+                activeLine = -1
+                activeLineInParagraph = 0
+                if (currentItem)
+                    currentItem.highlightLine(-1)
+                currentIndex = -1
+            }
+            else {              // set or change the line focus
+                if (currentIndex < 0)
+                    currentIndex = 0
+
+                if (currentItem.highlightLine(activeLineInParagraph))
+                    activeLineInParagraph++
+                else {
+                    currentItem.highlightLine(-1)
+                    currentIndex++
+                    activeLineInParagraph = 0
+                    if (currentItem) {
+                        if (currentItem.highlightLine(activeLineInParagraph))
+                            activeLineInParagraph++
+                    }
+                    else {
+                        activeLine = -1
+                    }
+                }
+            }
+        }
+
+        currentIndex: -1
+        highlightFollowsCurrentItem: true
+        focus: true
+
+        PullDownMenu {
+            visible: listView.activeLine >= 0
+            MenuItem {
+                //: Pulldown menu item to clear the line focus
+                text: qsTr("Zeilenfokus zerécksetzen")
+                onClicked: listView.activeLine = -1
+            }
+        }
+
         header: PageHeader {
             title: song.name
         }
 
         model: song.paragraphs
 
-        delegate: Item {
+        delegate: Rectangle {
             id: delegateItem
+            color: songsPage.bgColor
+
             width: parent.width
             height: content.height + Theme.paddingLarge
-            Rectangle
-            {
-                anchors.fill: delegateItem
-                color: songsPage.bgColor
-            }
-            Text {
+
+            TextEdit {
                 id: content
+                readOnly: true
                 x: Theme.horizontalPageMargin
                 width: parent.width - 2*x
                 anchors.verticalCenter: parent.verticalCenter
                 color: songsPage.fontColor
+                selectionColor: songsPage.fontColor
+                selectedTextColor: Qt.colorEqual(songsPage.bgColor, "transparent") ? "black" : songsPage.bgColor
                 font.family: Theme.fontFamily
-                font.pixelSize: songsPage.fontSize
+                font.pixelSize: 0
                 wrapMode: Text.Wrap
                 text: model.content
+            }
+            MouseArea {
+                anchors.fill: parent
+                onClicked: listView.activeLine++
+            }
+            function highlightLine(line) {
+                if (line < 0) {
+                    content.deselect()
+                    return true
+                }
+                else {
+                    var currentLine = 0
+                    var currentNewLine = 0
+                    var lastNewline = 0
+                    while (currentLine <= line && lastNewline >= 0) {
+                        lastNewline = currentNewLine
+                        currentNewLine = content.text.indexOf('\n', lastNewline + 1)
+                        currentLine++
+                    }
+                    if (currentNewLine >= 0 && lastNewline >= 0) {
+                        content.select(lastNewline, currentNewLine)
+                        return true
+                    }
+                    else if (currentNewLine < 0) {
+                        content.select(lastNewline, content.length)
+                        return true
+                    }
+                    else {
+                        return false
+                    }
+                }
             }
         }
 

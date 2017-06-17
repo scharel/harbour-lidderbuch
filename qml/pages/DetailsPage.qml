@@ -48,8 +48,7 @@ Page {
                     Label {
                         text: propertyValue
                         truncationMode: TruncationMode.Fade
-                        color: Theme.highlightColor
-                        width: column.width - propertyLabel.x - propertyLabel.width
+                        width: column.width - Theme.horizontalPageMargin - propertyLabel.contentWidth - Theme.paddingMedium
                     }
                 }
             }
@@ -108,12 +107,38 @@ Page {
                 text: qsTr("Online")
                 visible: song.url? true: false
             }
-            Button {
-                //: Open in browser
-                text: qsTr("Am Browser opmaachen")
-                anchors.horizontalCenter: parent.horizontalCenter
-                onClicked: Qt.openUrlExternally(song.url)
+            Row {
+                width: column.width
+                spacing: Theme.paddingMedium
+                x: Theme.horizontalPageMargin
                 visible: song.url? true: false
+                Label {
+                    id: propertyLabel
+                    color: Theme.secondaryColor
+                    //: URL to the website
+                    text: qsTr("Link")
+                }
+                Label {
+                    width: column.width - Theme.horizontalPageMargin - propertyLabel.contentWidth - Theme.paddingMedium
+                    linkColor: Theme.highlightColor
+                    wrapMode: Text.Wrap
+                    onLinkActivated: Qt.openUrlExternally(link)
+                    text: "<a href=\"" + song.url + "\">" + song.url + "</a>"
+                }
+            }
+            Button {
+                anchors.horizontalCenter: parent.horizontalCenter
+                visible: Clipboard.text !== song.url
+                onClicked: Clipboard.text = song.url
+                //: Copy to clipboard
+                text: qsTr("An d'Tëschenoflag kopéieren")
+            }
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                color: Theme.secondaryColor
+                visible: Clipboard.text === song.url
+                //: Text is already in clipboard
+                text: qsTr("(An der Tëschenoflag)")
             }
         }
 

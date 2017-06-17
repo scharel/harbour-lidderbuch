@@ -23,8 +23,9 @@ Page {
                 x: Theme.horizontalPageMargin
                 spacing: Theme.paddingMedium
                 //: App version
-                Label { text: qsTr("Versioun"); color: Theme.secondaryColor }
-                Label { text: "1.1-5"; color: Theme.highlightColor }
+                Label { text: qsTr("Versioun"); color: Theme.primaryColor }
+                Label { text: "1.2-1"; color: Theme.highlightColor }
+                Label { text: qsTr("Debug-Modus"); visible: debug; color: Theme.secondaryColor }
             }
 
             Image {
@@ -33,13 +34,10 @@ Page {
                 width: Theme.iconSizeExtraLarge
                 fillMode: Image.PreserveAspectFit
             }
-            Text {
+            Label {
                 x: Theme.horizontalPageMargin
                 width: parent.width - x
-                color: Theme.secondaryColor
                 linkColor: Theme.highlightColor
-                font.family: Theme.fontFamily
-                font.pixelSize: Theme.fontSizeMedium
                 wrapMode: Text.Wrap
                 onLinkActivated: Qt.openUrlExternally(link)
                 //: Disclaymer by ACEL
@@ -49,13 +47,10 @@ Page {
                 width: parent.width
                 color: Theme.secondaryColor
             }
-            Text {
+            Label {
                 x: Theme.horizontalPageMargin
                 width: parent.width - x
-                color: Theme.secondaryColor
                 linkColor: Theme.highlightColor
-                font.family: Theme.fontFamily
-                font.pixelSize: Theme.fontSizeMedium
                 wrapMode: Text.Wrap
                 onLinkActivated: Qt.openUrlExternally(link)
                 //: Possibilities to report issues

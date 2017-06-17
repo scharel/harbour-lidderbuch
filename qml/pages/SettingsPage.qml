@@ -95,16 +95,16 @@ Page {
                 }
             }
 
-            /*
             SectionHeader {
                 text: "Debug"
+                visible: debug
             }
             Button {
                 text: "Reset"
+                visible: debug
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: appSettings.clear()
             }
-            */
         }
 
         ScrollDecorator { }

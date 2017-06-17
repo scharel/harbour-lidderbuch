@@ -23,6 +23,10 @@
         <extracomment>App version</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Debug-Modus</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -34,21 +38,6 @@
 </context>
 <context>
     <name>DetailsPage</name>
-    <message>
-        <source>Am Browser opmaachen</source>
-        <extracomment>Open in browser</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Auteuren</source>
-        <extracomment>Authors</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <extracomment>Online features</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Latäin</source>
         <extracomment>Latin language</extracomment>
@@ -100,6 +89,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Auteuren</source>
+        <extracomment>Authors</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Text</source>
         <extracomment>Lyrics author</extracomment>
         <translation type="unfinished"></translation>
@@ -107,6 +101,26 @@
     <message>
         <source>Melodie</source>
         <extracomment>Melody author</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <extracomment>Online features</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Link</source>
+        <extracomment>URL to the website</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An d&apos;Tëschenoflag kopéieren</source>
+        <extracomment>Copy to clipboard</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(An der Tëschenoflag)</source>
+        <extracomment>Text is already in clipboard</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -228,6 +242,11 @@
 </context>
 <context>
     <name>SongPage</name>
+    <message>
+        <source>Zeilenfokus zerécksetzen</source>
+        <extracomment>Pulldown menu item to clear the line focus</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <source>Weider Detailer iwwer d&apos;Lidd uweisen</source>
         <extracomment>Show further details about the song</extracomment>
