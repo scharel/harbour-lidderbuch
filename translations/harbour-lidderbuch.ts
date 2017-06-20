@@ -104,13 +104,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Online</source>
-        <extracomment>Online features</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Link</source>
-        <extracomment>URL to the website</extracomment>
+        <extracomment>Link to the website containing the songtext</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>

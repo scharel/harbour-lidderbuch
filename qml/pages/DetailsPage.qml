@@ -103,28 +103,18 @@ Page {
             }
 
             SectionHeader {
-                //: Online features
-                text: qsTr("Online")
+                //: Link to the website containing the songtext
+                text: qsTr("Link")
                 visible: song.url? true: false
             }
-            Row {
-                width: column.width
-                spacing: Theme.paddingMedium
+            Label {
+                width: column.width - 2 * Theme.horizontalPageMargin
                 x: Theme.horizontalPageMargin
+                linkColor: Theme.highlightColor
+                wrapMode: Text.Wrap
                 visible: song.url? true: false
-                Label {
-                    id: propertyLabel
-                    color: Theme.secondaryColor
-                    //: URL to the website
-                    text: qsTr("Link")
-                }
-                Label {
-                    width: column.width - Theme.horizontalPageMargin - propertyLabel.contentWidth - Theme.paddingMedium
-                    linkColor: Theme.highlightColor
-                    wrapMode: Text.Wrap
-                    onLinkActivated: Qt.openUrlExternally(link)
-                    text: "<a href=\"" + song.url + "\">" + song.url + "</a>"
-                }
+                onLinkActivated: Qt.openUrlExternally(link)
+                text: "<a href=\"" + song.url + "\">" + song.url + "</a>"
             }
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter
