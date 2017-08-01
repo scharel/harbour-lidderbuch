@@ -21,7 +21,10 @@ ListModel {
         for (var i=0; i<songs.length; i++) {
             var numberIndex = songs[i].number? songs[i].number.toString().indexOf(query): -1
             var nameIndex = songs[i].name? songs[i].name.toLowerCase().indexOf(query.toLowerCase()): -1
-            if (query === "" || numberIndex >= 0 || nameIndex >= 0) {
+            var categoryIndex = songs[i].category? songs[i].category.toLowerCase().indexOf(query.toLowerCase()): -1
+            var lyricsAuthorIndex = songs[i].lyrics_author? songs[i].lyrics_author.toLowerCase().indexOf(query.toLowerCase()): -1
+            var melodyAuthorIndex = songs[i].melody_author? songs[i].melody_author.toLowerCase().indexOf(query.toLowerCase()): -1
+            if (query === "" || numberIndex >= 0 || nameIndex >= 0 || categoryIndex >= 0 || lyricsAuthorIndex >= 0 || melodyAuthorIndex >= 0) {
                 append(songs[i])
             }
         }
