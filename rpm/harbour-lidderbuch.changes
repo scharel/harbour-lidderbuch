@@ -12,6 +12,7 @@
 - Changed text property from truncation to wrap on the details page.
 - Show date of last edit of a song on the details page.
 - Display refrain paragraphs in italic font.
+- Bugfix #1: Line tracker not forewarding on paragraph with a single line.
 
 * Tue Jun 20 2017 Scharel Clemens <harbour-lidderbuch@scharel.name> 1.4-1
 - Small change on how the link is shown on the details page.

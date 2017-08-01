@@ -126,24 +126,24 @@ Page {
                 onClicked: listView.activeLine++
             }
             function highlightLine(line) {
-                if (line < 0) {
+                if (line < 0) {         // unselect everything
                     content.deselect()
                     return true
                 }
-                else {
-                    var currentLine = 0
-                    var currentNewLine = 0
-                    var lastNewline = 0
-                    while (currentLine <= line && lastNewline >= 0) {
+                else {                      // select line
+                    var currentLine = 0     // iterator through the lines
+                    var currentNewLine = 0  // position of the end of the current line
+                    var lastNewline = 0     // postition of the end of the previous line (aka beginning of the current line)
+                    while (currentLine <= line && currentNewLine >= 0) {   // iterate until the target line or the end of the paragraph is reached
                         lastNewline = currentNewLine
-                        currentNewLine = content.text.indexOf('\n', lastNewline + 1)
+                        currentNewLine = content.text.indexOf('\n', lastNewline + 1)    // find the end of the line (-1 if not new line available)
                         currentLine++
                     }
-                    if (currentNewLine >= 0 && lastNewline >= 0) {
+                    if (currentNewLine > 0) {
                         content.select(lastNewline, currentNewLine)
                         return true
                     }
-                    else if (currentNewLine < 0) {
+                    else if (currentLine > line) {
                         content.select(lastNewline, content.length)
                         return true
                     }
