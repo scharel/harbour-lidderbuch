@@ -117,6 +117,7 @@ Page {
                 selectedTextColor: Qt.colorEqual(songsPage.bgColor, "transparent") ? "black" : songsPage.bgColor
                 font.family: Theme.fontFamily
                 font.pixelSize: songsPage.fontSize
+                font.italic: model.type === "refrain"
                 wrapMode: Text.Wrap
                 text: model.content
             }

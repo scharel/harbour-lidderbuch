@@ -64,6 +64,16 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Detailer iwwer d&apos;Lidd</source>
+        <extracomment>Details about the song</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Titel</source>
+        <extracomment>Song name</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Nummer</source>
         <extracomment>Song number</extracomment>
         <translation type="unfinished"></translation>
@@ -86,6 +96,11 @@
     <message>
         <source>Joer</source>
         <extracomment>Release year of the song</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aktualiséiert</source>
+        <extracomment>Last update to the content</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>

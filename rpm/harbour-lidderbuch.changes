@@ -8,6 +8,14 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Tue Aug 01 2017 Scharel Clemens <harbour-lidderbuch@scharel.name> 1.4-2
+- Changed text property from truncation to wrap on the details page.
+- Show date of last edit of a song on the details page.
+- Display refrain paragraphs in italic font.
+
+* Tue Jun 20 2017 Scharel Clemens <harbour-lidderbuch@scharel.name> 1.4-1
+- Small change on how the link is shown on the details page.
+
 * Sat Jun 17 2017 Scharel Clemens <harbour-lidderbuch@scharel.name> 1.3-1
 - Fixed a bug introduced with 1.2-1 about font sizes in the song page
 

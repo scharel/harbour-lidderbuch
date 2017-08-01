@@ -52,7 +52,7 @@ ListModel {
                     var filePut = new XMLHttpRequest
                     filePut.open("PUT", file)
                     filePut.send(json)
-                    lastUpdate = new Date().toLocaleString(Qt.locale("de_LU"), "d.MM.yy h:mm")
+                    lastUpdate = new Date().toLocaleString(Qt.locale("de_LU"), "dd.MM.yyyy h:mm")
                 }
                 else {
                     console.log("Error loading songs from api")

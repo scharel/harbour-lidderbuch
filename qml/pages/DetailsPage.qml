@@ -30,7 +30,8 @@ Page {
             spacing: Theme.paddingLarge
 
             PageHeader {
-                title: song.name
+                //: Details about the song
+                title: qsTr("Detailer iwwer d'Lidd")
             }
 
             Component {
@@ -47,12 +48,19 @@ Page {
                     }
                     Label {
                         text: propertyValue
-                        truncationMode: TruncationMode.Fade
+                        wrapMode: Text.Wrap
                         width: column.width - Theme.horizontalPageMargin - propertyLabel.contentWidth - Theme.paddingMedium
                     }
                 }
             }
 
+
+            Loader {
+                //: Song name
+                property string propertyDesc: qsTr("Titel")
+                property var propertyValue: song.name
+                sourceComponent: { song.name? propertyComponent: null }
+            }
             Loader {
                 //: Song number
                 property string propertyDesc: qsTr("Nummer")
@@ -82,6 +90,12 @@ Page {
                 property string propertyDesc: qsTr("Joer")
                 property var propertyValue: song.year
                 sourceComponent: { song.year? propertyComponent: null }
+            }
+            Loader {
+                //: Last update to the content
+                property string propertyDesc: qsTr("Aktualiséiert")
+                property var propertyValue: new Date(song.update_time*1000).toLocaleDateString(Qt.locale("de_LU"), "dd.MM.yyyy")
+                sourceComponent: { song.update_time? propertyComponent: null }
             }
 
             SectionHeader {
