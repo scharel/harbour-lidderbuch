@@ -152,16 +152,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Keng Lidder verfügbar!</source>
-        <extracomment>No songs available</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>An den Astellungen kennen d&apos;Lidder nei erofgeluede ginn.</source>
-        <extracomment>Use the settings page to download content</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Keng Lidder fonnt!</source>
         <extracomment>No songs found with search function</extracomment>
         <translation type="unfinished"></translation>
@@ -169,6 +159,16 @@
     <message>
         <source>Probéier eng aner Sich.</source>
         <extracomment>Try another search query</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keng Lidder verfügbar!</source>
+        <extracomment>No songs available</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An den Astellungen kennen d&apos;Lidder nei erofgeluede ginn.</source>
+        <extracomment>Use the settings page to download content</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -247,6 +247,14 @@
     <message>
         <source>Matrix</source>
         <extracomment>Green on black color theme</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SongModel</name>
+    <message>
+        <source>zeréckgesat</source>
+        <extracomment>Text to display instead of the update time after a reset</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>

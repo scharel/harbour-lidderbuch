@@ -40,6 +40,7 @@ Page {
                 }
                 EnterKey.iconSource: "image://theme/icon-m-enter-close"
                 EnterKey.onClicked: focus = false
+                enabled: songModel.json.length > 0
             }
         }
 
@@ -64,10 +65,8 @@ Page {
                 anchors.verticalCenter: parent.verticalCenter
                 Label {
                     id: songNumber
-                    text: model.number
-                    width: Theme.iconSizeSmall
+                    text: model.number === "" ? " – " : model.number
                     color: song.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
-                    opacity: model.number === 0 ? 0 : 1
                 }
 
                 Label {
@@ -88,7 +87,7 @@ Page {
 
         ViewPlaceholder {
             verticalOffset: -2 * Theme.paddingLarge
-            enabled: songModel.count === 0 && searchField.text !== ""
+            enabled: songModel.count === 0 && songModel.json.length > 0
             //: No songs found with search function
             text: qsTr("Keng Lidder fonnt!")
             //: Try another search query
@@ -96,7 +95,7 @@ Page {
         }
 
         ViewPlaceholder {
-            enabled: songModel.count === 0 && searchField.text === ""
+            enabled: songModel.count === 0 && songModel.json.length === 0
             //: No songs available
             text: qsTr("Keng Lidder verfügbar!")
             //: Use the settings page to download content

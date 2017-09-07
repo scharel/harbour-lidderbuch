@@ -8,6 +8,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Sep 06 2017 Scharel Clemens <harbour-lidderbuch@scharel.name> 2.0-1
+- Update to AcepApi v2
+
 * Tue Aug 01 2017 Scharel Clemens <harbour-lidderbuch@scharel.name> 1.4-2
 - Changed text property from truncation to wrap on the details page.
 - Show date of last edit of a song on the details page.

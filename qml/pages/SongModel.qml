@@ -3,12 +3,22 @@ import Sailfish.Silica 1.0
 
 ListModel {
     property string file: StandardPaths.data + "/songs.json"
-    property string url: "https://acel.lu/api/v1/songs"
+    property string url: "https://acel.lu/api/v2/songs"
     property string json: ""
     property bool busy: false
     property var lastUpdate
 
     onJsonChanged: refresh()
+
+    function flush() {
+        json = ""
+        var filePut = new XMLHttpRequest
+        filePut.open("PUT", file)
+        filePut.send(json)
+        clear()
+        //: Text to display instead of the update time after a reset
+        lastUpdate = qsTr("zeréckgesat")
+    }
 
     function refresh() {
         search("")
@@ -31,9 +41,10 @@ ListModel {
     }
 
     function parseJson() {
-        var songs = JSON.parse(json);
-        if (songs.errors !== undefined) {
-            console.log("Error fetching songs: " + songs.errors[0].message)
+        var songs = JSON.parse(json)
+        if (songs === null) {
+            console.log("Error parsing JSON!")
+            songs = ""
             json = ""
             return null
         }

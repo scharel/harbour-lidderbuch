@@ -103,7 +103,10 @@ Page {
                 text: "Reset"
                 visible: debug
                 anchors.horizontalCenter: parent.horizontalCenter
-                onClicked: appSettings.clear()
+                onClicked: {
+                    appSettings.clear()
+                    songModel.flush()
+                }
             }
         }
 
