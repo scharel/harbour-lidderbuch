@@ -40,9 +40,13 @@ Page {
                     Label {
                         id: timeLabel
                         text: appSettings.lastUpdate
+                        visible: !songModel.busy
                         color: Theme.highlightColor
+                        width: parent.width - x
+                        wrapMode: Text.Wrap
                     }
                     BusyIndicator {
+                        id: updateBusy
                         running: songModel.busy
                         size: BusyIndicatorSize.Small
                     }
