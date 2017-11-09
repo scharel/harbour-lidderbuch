@@ -60,21 +60,22 @@ Page {
                 currentIndex = -1
             }
             else {              // set or change the line focus
-                if (currentIndex < 0)
+                if (currentIndex < 0)   // if no line focus was set before
                     currentIndex = 0
 
-                if (currentItem.highlightLine(activeLineInParagraph))
+                if (currentItem.highlightLine(activeLineInParagraph))   // highlight the line in the paragraph
                     activeLineInParagraph++
-                else {
+                else {  // if the end of the paragraph is reached
                     currentItem.highlightLine(-1)
                     currentIndex++
                     activeLineInParagraph = 0
-                    if (currentItem) {
+                    if (currentItem) {  // if there is another paragraph following
                         if (currentItem.highlightLine(activeLineInParagraph))
                             activeLineInParagraph++
-                    }
+                    }   // if the end of the song is reached
                     else {
                         activeLine = -1
+                        scrollToTop()
                     }
                 }
             }
