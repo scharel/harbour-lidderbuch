@@ -155,11 +155,15 @@ Page {
             }
         }
 
-        Rectangle { // fill the remaining background
+        MouseArea { // fill the remaining background
             width: parent.width
             height: songsPage.height - listView.contentHeight
             anchors.bottom: parent.bottom
-            color: songsPage.bgColor
+            Rectangle {
+                anchors.fill: parent
+                color: songsPage.bgColor
+            }
+            onClicked: listView.activeLine++
         }
 
         VerticalScrollDecorator { flickable: listView }

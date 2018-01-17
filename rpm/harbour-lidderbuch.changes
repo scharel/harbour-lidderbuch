@@ -8,6 +8,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Jan 17 2018 Scharel Clemens <harbour-lidderbuch@scharel.name> 2.1-2
+- Clear the searchfield when navigating back to the first page.
+- Some small changes and fixes.
+
 * Thu Nov 09 2017 Scharel Clemens <harbour-lidderbuch@scharel.name> 2.1-1
 - Scroll to top after the line focus reached the end of a song.
 

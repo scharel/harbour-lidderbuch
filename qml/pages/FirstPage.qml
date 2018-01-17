@@ -22,29 +22,29 @@ Page {
             }
         }
 
-        Component {
-            id: searchField
-
+        header: SearchField {
+            width: parent.width
             //: Page Header
-            //title: qsTr("ACEL Lidderbuch")
-            SearchField {
-                width: parent.width
-                //: Page Header
-                placeholderText: qsTr("ACEL Lidderbuch")
-                onTextChanged: {
-                    songModel.search(text)
-                }
-                Connections {
-                    target: appWindow
-                    onCoverSearchTriggered: forceActiveFocus()
-                }
-                EnterKey.iconSource: "image://theme/icon-m-enter-close"
-                EnterKey.onClicked: focus = false
-                enabled: songModel.json.length > 0
+            placeholderText: qsTr("ACEL Lidderbuch")
+            onTextChanged: {
+                songModel.search(text)
             }
-        }
+            Connections {
+                target: appWindow
+                onCoverSearchTriggered: focus = true
+            }
+            Connections {
+                target: firstPage
+                onStatusChanged: if (status === PageStatus.Active) {
+                                     focus = false
+                                     text = ""
+                                 }
+            }
 
-        header: searchField
+            EnterKey.iconSource: "image://theme/icon-m-enter-close"
+            EnterKey.onClicked: focus = false
+            enabled: songModel.json.length > 0
+        }
 
         model: songModel
         currentIndex: -1
@@ -86,20 +86,21 @@ Page {
         }
 
         ViewPlaceholder {
-            verticalOffset: -2 * Theme.paddingLarge
             enabled: songModel.count === 0 && songModel.json.length > 0
             //: No songs found with search function
             text: qsTr("Keng Lidder fonnt!")
             //: Try another search query
             hintText: qsTr("Probéier eng aner Sich.")
+            verticalOffset: (firstPage.height - Screen.height) * 0.5
         }
 
         ViewPlaceholder {
-            enabled: songModel.count === 0 && songModel.json.length === 0
+            enabled: songModel.count === 0 && songModel.json.length === 0 && !songModel.busy
             //: No songs available
             text: qsTr("Keng Lidder verfügbar!")
             //: Use the settings page to download content
             hintText: qsTr("An den Astellungen kennen d'Lidder nei erofgeluede ginn.")
+            verticalOffset: (firstPage.height - Screen.height) * 0.5
         }
 
         VerticalScrollDecorator { flickable: listView }
