@@ -205,11 +205,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Aktualiséieren</source>
-        <extracomment>Section to update the song texts</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Ausgesinn</source>
         <extracomment>Section to manipulate the look of the SongPage</extracomment>
         <translation type="unfinished"></translation>
@@ -247,6 +242,11 @@
     <message>
         <source>Matrix</source>
         <extracomment>Green on black color theme</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lidder aktualiséieren</source>
+        <extracomment>Section to update the song texts</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>

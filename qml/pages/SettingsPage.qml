@@ -21,7 +21,7 @@ Page {
 
             SectionHeader {
                 //: Section to update the song texts
-                text: qsTr("Aktualiséieren")
+                text: qsTr("Lidder aktualiséieren")
             }
             Column {
                 width: parent.width
