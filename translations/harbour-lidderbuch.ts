@@ -135,40 +135,102 @@
     </message>
 </context>
 <context>
-    <name>FirstPage</name>
+    <name>EventPage</name>
     <message>
-        <source>Iwwer d&apos;App</source>
-        <extracomment>Pulldown menu item to About page</extracomment>
+        <source>Beschreiwung</source>
+        <extracomment>description</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Astellungen</source>
-        <extracomment>Pulldown menu item to Settings page</extracomment>
+        <source>Locatioun</source>
+        <extracomment>location</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>ACEL Lidderbuch</source>
-        <extracomment>Page Header</extracomment>
+        <source>Zäit</source>
+        <extracomment>time</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Keng Lidder fonnt!</source>
-        <extracomment>No songs found with search function</extracomment>
+        <source>Auer</source>
+        <extracomment>o&apos;clock</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Probéier eng aner Sich.</source>
-        <extracomment>Try another search query</extracomment>
+        <source>Organisateuren</source>
+        <extracomment>organizers</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Keng Lidder verfügbar!</source>
-        <extracomment>No songs available</extracomment>
+        <source>Facebook</source>
+        <extracomment>Visit the organizers social network page</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>An den Astellungen kennen d&apos;Lidder nei erofgeluede ginn.</source>
-        <extracomment>Use the settings page to download content</extracomment>
+        <source>op acel.lu</source>
+        <extracomment>Visit the organizers website on acel.lu</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Websäit</source>
+        <extracomment>Visit the organizers website</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bis</source>
+        <extracomment>until</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An de Kalenner importéieren</source>
+        <extracomment>Import the event into the calendar</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Websäit opmaachen</source>
+        <extracomment>Pulldown menu item to visit the event website</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>EventsPage</name>
+    <message>
+        <source>Aktualiséieren</source>
+        <extracomment>Pulldown menu item to update the events</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aktualiséiert</source>
+        <extracomment>Updated</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Agenda</source>
+        <extracomment>Header of the events page</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Näischt an der Agenda</source>
+        <extracomment>No envent available</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Erof zéien vir ze Aktualiséieren</source>
+        <extracomment>Pull down to update the content</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Feeler</source>
+        <extracomment>Error //: Status</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>nach ni</source>
+        <extracomment>never</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -202,11 +264,6 @@
     <message>
         <source>Schrëftgréisst</source>
         <extracomment>Font size for the song page</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ausgesinn</source>
-        <extracomment>Section to manipulate the look of the SongPage</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -249,12 +306,28 @@
         <extracomment>Section to update the song texts</extracomment>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>SongModel</name>
     <message>
-        <source>zeréckgesat</source>
-        <extracomment>Text to display instead of the update time after a reset</extracomment>
+        <source>Iwwer d&apos;App</source>
+        <extracomment>Pulldown menu item to the About page</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Feeler</source>
+        <extracomment>Error //: Status</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>nach ni</source>
+        <extracomment>never</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ausgesinn vun den Lidder-Texter</source>
+        <extracomment>Section to manipulate the look of the SongPage</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -272,10 +345,45 @@
     </message>
 </context>
 <context>
-    <name>harbour-lidderbuch</name>
+    <name>SongsPage</name>
     <message>
-        <source>nach ni</source>
-        <extracomment>Alternative text if no update time is available</extracomment>
+        <source>Astellungen</source>
+        <extracomment>Pulldown menu item to the Settings page</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ACEL Agenda</source>
+        <extracomment>Pulldown menu item to the Events page</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ACEL Lidderbuch</source>
+        <extracomment>Page Header</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keng Lidder fonnt</source>
+        <extracomment>No songs found with search function</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Probéier eng aner Sich.</source>
+        <extracomment>Try another search query</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keng Lidder verfügbar</source>
+        <extracomment>No songs available</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An den Astellungen kennen d&apos;Lidder nei erofgeluede ginn.</source>
+        <extracomment>Use the settings page to download content</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ACEL Agenda uweisen</source>
+        <extracomment>Show the ACEL events</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -9,6 +9,14 @@ Page {
         anchors.fill: parent
         contentHeight: column.height
 
+        PullDownMenu {
+            MenuItem {
+                //: Pulldown menu item to the About page
+                text: qsTr("Iwwer d'App")
+                onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
+            }
+        }
+
         Column {
             id: column
 
@@ -39,7 +47,15 @@ Page {
                     }
                     Label {
                         id: timeLabel
-                        text: appSettings.lastUpdate
+                        Timer { id: errorTimer; onTriggered: songModel.status = 200 }
+                        Connections { target: songModel; onStatusChanged: songModel.status === 200 ? errorTimer.stop() : errorTimer.restart() }
+                        text: errorTimer.running ?
+                                  //: Error               //: Status
+                                  qsTr("Feeler") + " (" + qsTr("Status") + " " + songModel.status + ")" :
+                                  (appSettings.songsUpdate.valueOf() === 0 ?
+                                      //: never
+                                      qsTr("nach ni") :
+                                      appSettings.songsUpdate.toLocaleString(Qt.locale(), "dd.MM.yyyy hh:mm:ss"))
                         visible: !songModel.busy
                         color: Theme.highlightColor
                         width: parent.width - x
@@ -62,7 +78,7 @@ Page {
 
             SectionHeader {
                 //: Section to manipulate the look of the SongPage
-                text: qsTr("Ausgesinn")
+                text: qsTr("Ausgesinn vun den Lidder-Texter")
             }
             ComboBox {
                 //: Font size for the song page

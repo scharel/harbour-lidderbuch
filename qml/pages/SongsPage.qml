@@ -11,14 +11,14 @@ Page {
         PullDownMenu {
             busy: songModel.busy
             MenuItem {
-                //: Pulldown menu item to About page
-                text: qsTr("Iwwer d'App")
-                onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
-            }
-            MenuItem {
-                //: Pulldown menu item to Settings page
+                //: Pulldown menu item to the Settings page
                 text: qsTr("Astellungen")
                 onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
+            }
+            MenuItem {
+                //: Pulldown menu item to the Events page
+                text: qsTr("ACEL Agenda")
+                onClicked: pageStack.push(Qt.resolvedUrl("EventsPage.qml"))
             }
         }
 
@@ -27,19 +27,19 @@ Page {
             //: Page Header
             placeholderText: qsTr("ACEL Lidderbuch")
             onTextChanged: {
-                songModel.search(text)
+                songModel.search(text.toLowerCase())
             }
             Connections {
                 target: appWindow
                 onCoverSearchTriggered: focus = true
             }
-            Connections {
+            /*Connections {
                 target: firstPage
                 onStatusChanged: if (status === PageStatus.Active) {
                                      focus = false
                                      text = ""
                                  }
-            }
+            }*/
 
             EnterKey.iconSource: "image://theme/icon-m-enter-close"
             EnterKey.onClicked: focus = false
@@ -88,7 +88,7 @@ Page {
         ViewPlaceholder {
             enabled: songModel.count === 0 && songModel.json.length > 0
             //: No songs found with search function
-            text: qsTr("Keng Lidder fonnt!")
+            text: qsTr("Keng Lidder fonnt")
             //: Try another search query
             hintText: qsTr("Probéier eng aner Sich.")
             verticalOffset: (firstPage.height - Screen.height) * 0.5
@@ -97,12 +97,27 @@ Page {
         ViewPlaceholder {
             enabled: songModel.count === 0 && songModel.json.length === 0 && !songModel.busy
             //: No songs available
-            text: qsTr("Keng Lidder verfügbar!")
+            text: qsTr("Keng Lidder verfügbar")
             //: Use the settings page to download content
             hintText: qsTr("An den Astellungen kennen d'Lidder nei erofgeluede ginn.")
             verticalOffset: (firstPage.height - Screen.height) * 0.5
         }
 
         VerticalScrollDecorator { flickable: listView }
+    }
+
+    TouchInteractionHint {
+        id: hint
+        Component.onCompleted: if (appSettings.eventsHint) restart()
+        interactionMode: TouchInteraction.Pull
+        direction: TouchInteraction.Down
+    }
+    InteractionHintLabel {
+        //: Show the ACEL events
+        text: qsTr("ACEL Agenda uweisen")
+        opacity: hint.running ? 1.0 : 0.0
+        Behavior on opacity { FadeAnimation {} }
+        width: parent.width
+        height: parent.height
     }
 }

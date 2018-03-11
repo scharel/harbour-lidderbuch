@@ -86,7 +86,8 @@ Page {
         focus: true
 
         PullDownMenu {
-            visible: listView.activeLine >= 0
+            visible: listView.activeLine >= 0 || active
+            quickSelect: true
             MenuItem {
                 //: Pulldown menu item to clear the line focus
                 text: qsTr("Zeilenfokus zerécksetzen")

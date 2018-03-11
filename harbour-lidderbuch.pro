@@ -18,7 +18,6 @@ SOURCES += src/harbour-lidderbuch.cpp
 
 OTHER_FILES += qml/harbour-lidderbuch.qml \
     qml/cover/CoverPage.qml \
-    qml/pages/FirstPage.qml \
     rpm/harbour-lidderbuch.spec \
     rpm/harbour-lidderbuch.yaml \
     translations/*.ts \
@@ -39,10 +38,12 @@ CONFIG += sailfishapp_i18n
 DISTFILES += \
     qml/pages/AboutPage.qml \
     qml/pages/SettingsPage.qml \
-    qml/pages/SongModel.qml \
     qml/pages/SongPage.qml \
     qml/cover/logo.png \
     qml/pages/DetailsPage.qml \
-    rpm/harbour-lidderbuch.changes
+    rpm/harbour-lidderbuch.changes \
+    qml/pages/EventsPage.qml \
+    qml/pages/EventPage.qml \
+    qml/pages/SongsPage.qml
 
 HEADERS +=

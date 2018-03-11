@@ -8,6 +8,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun Mar 11 2018 Scharel Clemens <harbour-lidderbuch@scharel.name> 2.2-1
+- Added ACEL events
+- Some background changes.
+
 * Wed Jan 17 2018 Scharel Clemens <harbour-lidderbuch@scharel.name> 2.1-2
 - Clear the searchfield when navigating back to the first page.
 - Some small changes and fixes.

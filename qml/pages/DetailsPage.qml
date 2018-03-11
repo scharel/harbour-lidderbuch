@@ -94,7 +94,7 @@ Page {
             Loader {
                 //: Last update to the content
                 property string propertyDesc: qsTr("Aktualiséiert")
-                property var propertyValue: new Date(song.update_time*1000).toLocaleDateString(Qt.locale("de_LU"), "dd.MM.yyyy")
+                property var propertyValue: new Date(song.update_time*1000).toLocaleDateString(Qt.locale(), "dd.MM.yyyy")
                 sourceComponent: { song.update_time? propertyComponent: null }
             }
 
