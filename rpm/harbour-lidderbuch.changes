@@ -8,6 +8,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun Mar 25 2018 Scharel Clemens <harbour-lidderbuch@scharel.name> 2.2-2
+- Calendar events can now been imported without launching the browser.
+
 * Sun Mar 11 2018 Scharel Clemens <harbour-lidderbuch@scharel.name> 2.2-1
 - Added ACEL events
 - Some background changes.

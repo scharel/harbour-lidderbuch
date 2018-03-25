@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Nemo.DBus 2.0
 
 Page {
     property var event
@@ -70,7 +71,32 @@ Page {
                 visible: event.ics_url.length > 0
                 //: Import the event into the calendar
                 text: qsTr("An de Kalenner importéieren")
-                onClicked: Qt.openUrlExternally(event.ics_url)
+                DBusInterface {
+                    id: calendarImport
+                    service: 'com.jolla.calendar.ui'
+                    path: '/com/jolla/calendar/ui'
+                    iface: 'com.jolla.calendar.ui'
+                }
+                onClicked: {
+                    var icsDownload = new XMLHttpRequest
+                    icsDownload.open("GET", event.ics_url, true)
+                    icsDownload.setRequestHeader('User-Agent', 'SailfishOS/harbour-lidderbuch')
+                    icsDownload.onreadystatechange = function() {
+                        if (icsDownload.readyState === XMLHttpRequest.DONE) {
+                            if (icsDownload.status === 200) {
+                                console.log("Successfully loaded " + event.ics_url)
+                                var filePut = new XMLHttpRequest
+                                filePut.open("PUT", StandardPaths.data + "/event.ics")
+                                filePut.onreadystatechange = function() {
+                                    if (filePut.readyState === XMLHttpRequest.DONE)
+                                        calendarImport.call('importFile', StandardPaths.data + "/event.ics")
+                                }
+                                filePut.send(icsDownload.responseText)
+                            }
+                        }
+                    }
+                    icsDownload.send()
+                }
             }
 
             SectionHeader {
