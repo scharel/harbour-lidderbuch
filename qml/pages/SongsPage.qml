@@ -31,7 +31,7 @@ Page {
             }
             Connections {
                 target: appWindow
-                onCoverSearchTriggered: focus = true
+                onCoverSearchTriggered: forceActiveFocus()
             }
             /*Connections {
                 target: firstPage
