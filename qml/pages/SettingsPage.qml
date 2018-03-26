@@ -116,6 +116,19 @@ Page {
             }
 
             SectionHeader {
+                //: API (Application Programmable Interface)
+                text: qsTr("API")
+            }
+            TextSwitch {
+                //: Alternative API
+                text: qsTr("Alternativ API")
+                //: Use this if you have problems with the API
+                description: qsTr("A gewësse Fäll kann et zu Problemer mat der API kommen. Sollten sech d'Liddertexter oder d'Agenda net aktualiséieren loossen, kann dëst ausprobéiert ginn.")
+                checked: appSettings.alternativeAPI
+                onCheckedChanged: appSettings.setValue("alternativeAPI", checked)
+            }
+
+            SectionHeader {
                 text: "Debug"
                 visible: debug
             }

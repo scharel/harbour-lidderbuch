@@ -330,6 +330,21 @@
         <extracomment>Section to manipulate the look of the SongPage</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>API</source>
+        <extracomment>API (Application Programmable Interface)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alternativ API</source>
+        <extracomment>Alternative API</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A gewësse Fäll kann et zu Problemer mat der API kommen. Sollten sech d&apos;Liddertexter oder d&apos;Agenda net aktualiséieren loossen, kann dëst ausprobéiert ginn.</source>
+        <extracomment>Use this if you have problems with the API</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SongPage</name>

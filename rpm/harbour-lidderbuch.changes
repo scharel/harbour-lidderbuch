@@ -8,6 +8,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Mon Mar 26 2018 Scharel Clemens <harbour-lidderbuch@scharel.name> 2.3-1
+- Alternative API on https://www.scharel.name/harbour/lidderbuch/
+
 * Sun Mar 25 2018 Scharel Clemens <harbour-lidderbuch@scharel.name> 2.2-2
 - Calendar events can now been imported without launching the browser.
 

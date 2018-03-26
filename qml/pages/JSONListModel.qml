@@ -77,7 +77,7 @@ ListModel {
                 }
                 else {
                     console.log("Error loading " + url + " - " + apiReq.status)
-                   lastUpdate = new Date(0)
+                   //lastUpdate = new Date(0)
                 }
                 status = apiReq.status
                 busy = false

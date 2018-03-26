@@ -51,7 +51,7 @@ Page {
 
         model: JSONListModel {
             id: eventModel
-            url: "https://acel.lu/api/v1/events"
+            url: appSettings.alternativeAPI ? "https://www.scharel.name/harbour/lidderbuch/events" : "https://acel.lu/api/v1/events"
             name: "events"
             saveFile: true
         }

@@ -15,6 +15,7 @@ ApplicationWindow
         property int colorTheme: value("colorTheme", 0)
         property bool interactionHint: value("interactionHint", true)
         property bool eventsHint: value("eventsHint", true)
+        property bool alternativeAPI: value("alternativeAPI", false)
         property date songsUpdate: value("songsUpdate", new Date(0))
         property date eventsUpdate: value("eventsUpdate", new Date(0))
     }
@@ -27,7 +28,7 @@ ApplicationWindow
 
     property var songModel: JSONListModel {
         //id: eventModel
-        url: "https://acel.lu/api/v2/songs"
+        url: appSettings.alternativeAPI ? "https://www.scharel.name/harbour/lidderbuch/songs" : "https://acel.lu/api/v2/songs"
         name: "songs"
         saveFile: true
     }
