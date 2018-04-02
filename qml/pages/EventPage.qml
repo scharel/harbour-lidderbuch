@@ -69,6 +69,7 @@ Page {
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter
                 visible: event.ics_url.length > 0
+                enabled: !appSettings.alternativeAPI
                 //: Import the event into the calendar
                 text: qsTr("An de Kalenner importéieren")
                 DBusInterface {

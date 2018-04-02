@@ -205,11 +205,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Agenda</source>
-        <extracomment>Header of the events page</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Näischt an der Agenda</source>
         <extracomment>No envent available</extracomment>
         <translation type="unfinished"></translation>
@@ -231,6 +226,11 @@
     <message>
         <source>nach ni</source>
         <extracomment>never</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ACEL Agenda</source>
+        <extracomment>Header of the events page</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -331,11 +331,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>API</source>
-        <extracomment>API (Application Programmable Interface)</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Alternativ API</source>
         <extracomment>Alternative API</extracomment>
         <translation type="unfinished"></translation>
@@ -343,6 +338,11 @@
     <message>
         <source>A gewësse Fäll kann et zu Problemer mat der API kommen. Sollten sech d&apos;Liddertexter oder d&apos;Agenda net aktualiséieren loossen, kann dëst ausprobéiert ginn.</source>
         <extracomment>Use this if you have problems with the API</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>AcelApi</source>
+        <extracomment>AcelApi (Application Programmable Interface)</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>

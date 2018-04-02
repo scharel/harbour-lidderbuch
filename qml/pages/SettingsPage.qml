@@ -116,8 +116,8 @@ Page {
             }
 
             SectionHeader {
-                //: API (Application Programmable Interface)
-                text: qsTr("API")
+                //: AcelApi (Application Programmable Interface)
+                text: qsTr("AcelApi")
             }
             TextSwitch {
                 //: Alternative API

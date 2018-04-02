@@ -46,7 +46,7 @@ Page {
 
         header: PageHeader {
             //: Header of the events page
-            title: qsTr("Agenda")
+            title: qsTr("ACEL Agenda")
         }
 
         model: JSONListModel {
