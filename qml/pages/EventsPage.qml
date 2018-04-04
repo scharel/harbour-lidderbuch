@@ -26,7 +26,8 @@ Page {
             }*/
             MenuItem {
                 //: Pulldown menu item to update the events
-                text: qsTr("Aktualiséieren")
+                text: qsTr("Aktualiséieren") + (eventModel.busy ? "..." : "")
+                enabled: !eventModel.busy
                 onClicked: eventModel.update()
             }
             MenuLabel {
