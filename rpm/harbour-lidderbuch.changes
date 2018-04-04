@@ -8,6 +8,16 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Mon Apr 16 2018 Scharel Clemens <harbour-lidderbuch@scharel.name> 2.4-3
+- Enabled setting to allow the user to choose the startpage
+- Added cover page for the agenda
+
+* Sat Apr 07 2018 Scharel Clemens <harbour-lidderbuch@scharel.name> 2.4-2
+- Yet nonfunctional setting to allow the user to choose the startpage
+
+* Wed Apr 04 2018 Scharel Clemens <harbour-lidderbuch@scharel.name> 2.4-1
+- Disable pully menu item while updating agenda
+
 * Mon Apr 02 2018 Scharel Clemens <harbour-lidderbuch@scharel.name> 2.3-3
 - Disable calendar import when using the alternative API
 

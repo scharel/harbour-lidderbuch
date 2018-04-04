@@ -19,7 +19,6 @@ Page {
 
         Column {
             id: column
-
             width: parent.width
 
             PageHeader {
@@ -28,57 +27,51 @@ Page {
             }
 
             SectionHeader {
-                //: Section to update the song texts
-                text: qsTr("Lidder aktualiséieren")
+                //: General settings
+                text: qsTr("Allgemeng")
             }
-            Column {
-                width: parent.width
-                spacing: Theme.paddingLarge
+            ComboBox {
+                //: Starting page of the app
+                label: qsTr("Startsäit")
+                currentIndex: appSettings.startPage
 
-                Row {
-                    width: parent.width
-                    spacing: Theme.paddingMedium
-                    x: Theme.horizontalPageMargin
-                    Label {
-                        id: updateLabel
-                        //: DateTime of the last update
-                        text: qsTr("Leschten Update")
-                        color: Theme.secondaryColor
-                    }
-                    Label {
-                        id: timeLabel
-                        Timer { id: errorTimer; onTriggered: songModel.status = 200 }
-                        Connections { target: songModel; onStatusChanged: songModel.status === 200 ? errorTimer.stop() : errorTimer.restart() }
-                        text: errorTimer.running ?
-                                  //: Error               //: Status
-                                  qsTr("Feeler") + " (" + qsTr("Status") + " " + songModel.status + ")" :
-                                  (appSettings.songsUpdate.valueOf() === 0 ?
-                                      //: never
-                                      qsTr("nach ni") :
-                                      appSettings.songsUpdate.toLocaleString(Qt.locale(), "dd.MM.yyyy hh:mm:ss"))
-                        visible: !songModel.busy
-                        color: Theme.highlightColor
-                        width: parent.width - x
-                        wrapMode: Text.Wrap
-                    }
-                    BusyIndicator {
-                        id: updateBusy
-                        running: songModel.busy
-                        size: BusyIndicatorSize.Small
+                menu: ContextMenu {
+                    //: Songtexts
+                    MenuItem { text: qsTr("Lidderbuch") }
+                    //: Events
+                    MenuItem { text: qsTr("Agenda") }
+                    //: Last used
+                    MenuItem { text: qsTr("Lescht benotzten Säit") }
+                    onActivated: {
+                        appSettings.setValue("startPage", index)
+                        switch(appSettings.startPage) {
+                        case(0):
+                            pageStack.clear()
+                            pageStack.push(songsPage)
+                            break;
+                        case(1):
+                            pageStack.clear()
+                            pageStack.push(eventsPage)
+                            break;
+                        default:
+                            pageStack.pop()
+                            break;
+                        }
                     }
                 }
-                Button {
-                    //: Update song texts
-                    text: qsTr("Lo aktualiséierten")
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    enabled: !songModel.busy
-                    onClicked: songModel.update()
-                }
+            }
+            TextSwitch {
+                //: Alternative API
+                text: qsTr("Alternativ API")
+                //: Use this if you have problems with the API
+                description: qsTr("A gewësse Fäll kann et zu Problemer mat der API kommen. Sollten sech d'Liddertexter oder d'Agenda net aktualiséieren loossen, kann dëst ausprobéiert ginn.")
+                checked: appSettings.alternativeAPI
+                onCheckedChanged: appSettings.setValue("alternativeAPI", checked)
             }
 
             SectionHeader {
-                //: Section to manipulate the look of the SongPage
-                text: qsTr("Ausgesinn vun den Lidder-Texter")
+                //: Section of the song text settings
+                text: qsTr("Lidderbuch")
             }
             ComboBox {
                 //: Font size for the song page
@@ -114,18 +107,45 @@ Page {
                     onActivated: appSettings.setValue("colorTheme", index)
                 }
             }
-
-            SectionHeader {
-                //: AcelApi (Application Programmable Interface)
-                text: qsTr("AcelApi")
-            }
-            TextSwitch {
-                //: Alternative API
-                text: qsTr("Alternativ API")
-                //: Use this if you have problems with the API
-                description: qsTr("A gewësse Fäll kann et zu Problemer mat der API kommen. Sollten sech d'Liddertexter oder d'Agenda net aktualiséieren loossen, kann dëst ausprobéiert ginn.")
-                checked: appSettings.alternativeAPI
-                onCheckedChanged: appSettings.setValue("alternativeAPI", checked)
+            Column {
+                width: parent.width
+                spacing: Theme.paddingMedium
+                Row {
+                    width: parent.width
+                    spacing: Theme.paddingMedium
+                    x: Theme.horizontalPageMargin
+                    Label {
+                        //: DateTime of the last update
+                        text: qsTr("Leschten Update")
+                        color: Theme.secondaryColor
+                    }
+                    Label {
+                        Timer { id: songErrorTimer; onTriggered: songModel.status = 200 }
+                        Connections { target: songModel; onStatusChanged: songModel.status === 200 ? songErrorTimer.stop() : songErrorTimer.restart() }
+                        text: songErrorTimer.running ?
+                                  //: Error               //: Status
+                                  qsTr("Feeler") + " (" + qsTr("Status") + " " + songModel.status + ")" :
+                                  (appSettings.songsUpdate.valueOf() === 0 ?
+                                      //: never
+                                      qsTr("nach ni") :
+                                      appSettings.songsUpdate.toLocaleString(Qt.locale(), "dd.MM.yyyy hh:mm:ss"))
+                        visible: !songModel.busy
+                        color: Theme.highlightColor
+                        width: parent.width - x
+                        wrapMode: Text.Wrap
+                    }
+                    BusyIndicator {
+                        running: songModel.busy
+                        size: BusyIndicatorSize.Small
+                    }
+                }
+                Button {
+                    //: Update song texts
+                    text: qsTr("Lo aktualiséierten")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    enabled: !songModel.busy
+                    onClicked: songModel.update()
+                }
             }
 
             SectionHeader {
@@ -139,6 +159,9 @@ Page {
                 onClicked: {
                     appSettings.clear()
                     songModel.flush()
+                    eventModel.flush()
+                    pageStack.clear()
+                    pageStack.push(songsPage)
                 }
             }
         }

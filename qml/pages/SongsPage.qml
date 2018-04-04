@@ -4,6 +4,13 @@ import Sailfish.Silica 1.0
 Page {
     id: firstPage
 
+    onStatusChanged: {
+        if (status === PageStatus.Active) {
+            appSettings.setValue("songsHint", false)
+            appSettings.setValue("lastPage", 0)
+        }
+    }
+
     SilicaListView {
         id: listView
         anchors.fill: parent
@@ -11,14 +18,15 @@ Page {
         PullDownMenu {
             busy: songModel.busy
             MenuItem {
-                //: Pulldown menu item to the Settings page
+                //: Pulldown menu item to the settings page
                 text: qsTr("Astellungen")
                 onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
             }
             MenuItem {
-                //: Pulldown menu item to the Events page
+                //: Pulldown menu item to the events page
                 text: qsTr("ACEL Agenda")
-                onClicked: pageStack.push(Qt.resolvedUrl("EventsPage.qml"))
+                //onClicked: pageStack.replace(Qt.resolvedUrl("EventsPage.qml"))
+                onClicked: pageStack.replace(eventsPage)
             }
         }
 
@@ -101,6 +109,12 @@ Page {
             //: Use the settings page to download content
             hintText: qsTr("An den Astellungen kennen d'Lidder nei erofgeluede ginn.")
             verticalOffset: (firstPage.height - Screen.height) * 0.5
+        }
+
+        BusyIndicator {
+            anchors.centerIn: parent
+            size: BusyIndicatorSize.Large
+            running: songModel.count === 0 && songModel.busy
         }
 
         VerticalScrollDecorator { flickable: listView }

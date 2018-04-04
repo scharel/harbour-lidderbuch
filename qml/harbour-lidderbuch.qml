@@ -10,24 +10,22 @@ ApplicationWindow
     ConfigurationGroup {
         id: appSettings
         path: "/apps/harbour-lidderbuch/settings"
-        //: Alternative text if no update time is available
-        property int fontSize: value("fontSize", 1)
-        property int colorTheme: value("colorTheme", 0)
+        property var startPage: value("startPage", 0 )  // 0=SongsPage; 1=EventsPage; 2=LastPage
+        property int lastPage: value("lastPage", 0)     // 0=SongsPage; 1=EventsPage
+        property int fontSize: value("fontSize", 1)     // 0=Small; 1=Medium; 2=Large; 3=ExtraLarge
+        property int colorTheme: value("colorTheme", 0) // 0=SailfishOS; 1=Dark; 2=BlackOnWhite; 4=Matrix
         property bool interactionHint: value("interactionHint", true)
         property bool eventsHint: value("eventsHint", true)
+        property bool songsHint: value("songsHint", true)
         property bool alternativeAPI: value("alternativeAPI", false)
         property date songsUpdate: value("songsUpdate", new Date(0))
         property date eventsUpdate: value("eventsUpdate", new Date(0))
     }
-    /*property var songModel: SongModel {
-        onLastUpdateChanged: appSettings.setValue("lastUpdate", lastUpdate)
-    }*/
 
     property var daysLux: ["Sonndeg", "Méindeg", "Dënschdeg", "Mëttwoch", "Donneschdeg", "Freideg", "Samschdeg"]
     property var monthsLux: ["Januar", "Februar", "Mäerz", "Abrëll", "Mee", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
 
     property var songModel: JSONListModel {
-        //id: eventModel
         url: appSettings.alternativeAPI ? "https://www.scharel.name/harbour/lidderbuch/songs" : "https://acel.lu/api/v2/songs"
         name: "songs"
         saveFile: true
@@ -37,16 +35,36 @@ ApplicationWindow
         onLastUpdateChanged: appSettings.songsUpdate = songModel.lastUpdate
     }
 
+    property var eventModel: JSONListModel {
+        url: appSettings.alternativeAPI ? "https://www.scharel.name/harbour/lidderbuch/events" : "https://acel.lu/api/v1/events"
+        name: "events"
+        saveFile: true
+    }
+    Connections {
+        target: eventModel
+        onLastUpdateChanged: appSettings.eventsUpdate = eventModel.lastUpdate
+    }
+
     signal coverSearchTriggered()
     function doFocusOnSearch() {
-        while (pageStack.depth > 1)
-            pageStack.pop()
+        pageStack.clear()
+        pageStack.push(songsPage)
         pageStack.completeAnimation()
         activate()
         coverSearchTriggered()
     }
 
-    initialPage: Component { SongsPage{ } }
+    Component {
+        id: songsPage
+        SongsPage { }
+    }
+    Component {
+        id: eventsPage
+        EventsPage { }
+    }
+    initialPage: appSettings.startPage === 2 ? (appSettings.lastPage === 1 ? eventsPage : songsPage) :
+                                               (appSettings.startPage === 1 ? eventsPage : songsPage)
+
     cover: Component { CoverPage{ } }
     allowedOrientations: Orientation.All
     _defaultPageOrientations: Orientation.All

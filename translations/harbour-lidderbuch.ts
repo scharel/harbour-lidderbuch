@@ -31,8 +31,16 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <source>Lidderbuch</source>
+        <source>ACEL</source>
         <extracomment>App name on the cover</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Agenda</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lidderbuch</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -233,12 +241,93 @@
         <extracomment>Header of the events page</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>ACEL Lidderbuch</source>
+        <extracomment>Pulldown menu item to the songs page</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Astellungen</source>
+        <extracomment>Pulldown menu item to the settings page</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ACEL Lidderbuch uweisen</source>
+        <extracomment>Show the ACEL songs</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>
     <message>
+        <source>Iwwer d&apos;App</source>
+        <extracomment>Pulldown menu item to the About page</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Astellungen</source>
         <extracomment>Header of the settings page</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Allgemeng</source>
+        <extracomment>General settings</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Startsäit</source>
+        <extracomment>Starting page of the app</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lidderbuch</source>
+        <extracomment>Songtexts
+----------
+Section of the song text settings</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Agenda</source>
+        <extracomment>Events</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alternativ API</source>
+        <extracomment>Alternative API</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A gewësse Fäll kann et zu Problemer mat der API kommen. Sollten sech d&apos;Liddertexter oder d&apos;Agenda net aktualiséieren loossen, kann dëst ausprobéiert ginn.</source>
+        <extracomment>Use this if you have problems with the API</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leschten Update</source>
+        <extracomment>DateTime of the last update</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Feeler</source>
+        <extracomment>Error //: Status</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>nach ni</source>
+        <extracomment>never</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lo aktualiséierten</source>
+        <extracomment>Update song texts</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schrëftgréisst</source>
+        <extracomment>Font size for the song page</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -262,21 +351,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Schrëftgréisst</source>
-        <extracomment>Font size for the song page</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lo aktualiséierten</source>
-        <extracomment>Update song texts</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Leschten Update</source>
-        <extracomment>DateTime of the last update</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Faarwen</source>
         <extracomment>Colors for the song page</extracomment>
         <translation type="unfinished"></translation>
@@ -287,13 +361,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Schwaarz op Wäiss</source>
-        <extracomment>Black on white color theme</extracomment>
+        <source>Däischter</source>
+        <extracomment>Dark color theme</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Däischter</source>
-        <extracomment>Dark color theme</extracomment>
+        <source>Schwaarz op Wäiss</source>
+        <extracomment>Black on white color theme</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -302,47 +376,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Lidder aktualiséieren</source>
-        <extracomment>Section to update the song texts</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Iwwer d&apos;App</source>
-        <extracomment>Pulldown menu item to the About page</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Feeler</source>
-        <extracomment>Error //: Status</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Status</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>nach ni</source>
-        <extracomment>never</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ausgesinn vun den Lidder-Texter</source>
-        <extracomment>Section to manipulate the look of the SongPage</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Alternativ API</source>
-        <extracomment>Alternative API</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A gewësse Fäll kann et zu Problemer mat der API kommen. Sollten sech d&apos;Liddertexter oder d&apos;Agenda net aktualiséieren loossen, kann dëst ausprobéiert ginn.</source>
-        <extracomment>Use this if you have problems with the API</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>AcelApi</source>
-        <extracomment>AcelApi (Application Programmable Interface)</extracomment>
+        <source>Lescht benotzten Säit</source>
+        <extracomment>Last used</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -363,12 +398,12 @@
     <name>SongsPage</name>
     <message>
         <source>Astellungen</source>
-        <extracomment>Pulldown menu item to the Settings page</extracomment>
+        <extracomment>Pulldown menu item to the settings page</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>ACEL Agenda</source>
-        <extracomment>Pulldown menu item to the Events page</extracomment>
+        <extracomment>Pulldown menu item to the events page</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>

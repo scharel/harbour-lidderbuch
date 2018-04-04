@@ -4,7 +4,12 @@ import Sailfish.Silica 1.0
 Page {
     id: eventsPage
 
-    onStatusChanged: if (status === PageStatus.Active) appSettings.setValue("eventsHint", false)
+    onStatusChanged: {
+        if (status === PageStatus.Active) {
+            appSettings.setValue("eventsHint", false)
+            appSettings.setValue("lastPage", 1)
+        }
+    }
 
     SilicaListView {
         id: listView
@@ -25,10 +30,23 @@ Page {
                 }
             }*/
             MenuItem {
+                //: Pulldown menu item to the settings page
+                text: qsTr("Astellungen")
+                onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
+            }
+            MenuItem {
+                //: Pulldown menu item to the songs page
+                text: qsTr("ACEL Lidderbuch")
+                //onClicked: pageStack.replace(Qt.resolvedUrl("SongsPage.qml"))
+                onClicked: pageStack.replace(songsPage)
+            }
+            MenuItem {
                 //: Pulldown menu item to update the events
-                text: qsTr("Aktualiséieren")
+                text: qsTr("Aktualiséieren") + (eventModel.busy ? "..." : "")
+                enabled: !eventModel.busy
                 onClicked: eventModel.update()
             }
+
             MenuLabel {
                 Timer { id: errorTimer; interval: 2000; onTriggered: eventModel.status = 200 }
                 Connections { target: eventModel; onStatusChanged: eventModel.status === 200 ? errorTimer.stop() : errorTimer.restart() }
@@ -49,20 +67,9 @@ Page {
             title: qsTr("ACEL Agenda")
         }
 
-        model: JSONListModel {
-            id: eventModel
-            url: appSettings.alternativeAPI ? "https://www.scharel.name/harbour/lidderbuch/events" : "https://acel.lu/api/v1/events"
-            name: "events"
-            saveFile: true
-        }
-        Connections {
-            target: eventModel
-            onLastUpdateChanged: appSettings.eventsUpdate = eventModel.lastUpdate
-        }
-
-        Component.onCompleted: eventModel.update()
-
+        model: eventModel
         currentIndex: -1
+        Component.onCompleted: eventModel.update()
 
         delegate: ListItem {
             id: event
@@ -168,5 +175,20 @@ Page {
         }
 
         VerticalScrollDecorator { flickable: listView }
+    }
+
+    TouchInteractionHint {
+        id: hint
+        Component.onCompleted: if (appSettings.songsHint) restart()
+        interactionMode: TouchInteraction.Pull
+        direction: TouchInteraction.Down
+    }
+    InteractionHintLabel {
+        //: Show the ACEL songs
+        text: qsTr("ACEL Lidderbuch uweisen")
+        opacity: hint.running ? 1.0 : 0.0
+        Behavior on opacity { FadeAnimation {} }
+        width: parent.width
+        height: parent.height
     }
 }
