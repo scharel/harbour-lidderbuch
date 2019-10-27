@@ -8,6 +8,13 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun Oct 27 2019 Scharel Clemens <harbour-lidderbuch@scharel.rocks> 2.5-1
+- Do not show the link as the sites are not available anymore
+
+* Sun Oct 27 2019 Scharel Clemens <harbour-lidderbuch@scharel.rocks> 2.5-0
+- Removed agenda as the API does not provide the service anymore
+- Updated URL to update the songs
+
 * Mon Apr 16 2018 Scharel Clemens <harbour-lidderbuch@scharel.name> 2.4-3
 - Enabled setting to allow the user to choose the startpage
 - Added cover page for the agenda

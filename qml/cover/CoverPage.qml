@@ -25,7 +25,7 @@ CoverBackground {
         }
     }
 
-    SilicaListView {
+    /*SilicaListView {
         visible: appSettings.lastPage === 1
         width: parent.width
         anchors.top: coverColumn.bottom
@@ -60,23 +60,23 @@ CoverBackground {
             color: Theme.highlightColor
             horizontalAlignment: Text.AlignRight
         }
-    }
+    }*/
 
 CoverActionList {
-    enabled: appSettings.lastPage !== 1
+    //enabled: appSettings.lastPage !== 1
         CoverAction {
             iconSource: "image://theme/icon-cover-search"
             onTriggered: appWindow.doFocusOnSearch()
         }
     }
-    CoverActionList {
+    /*CoverActionList {
         enabled: appSettings.lastPage === 1
         iconBackground: true
         CoverAction {
             iconSource: "image://theme/icon-cover-refresh"
             onTriggered: appWindow.eventModel.update()
         }
-    }
+    }*/
 }
 
 

@@ -24,7 +24,7 @@ Page {
                 spacing: Theme.paddingMedium
                 //: App version
                 Label { text: qsTr("Versioun"); color: Theme.primaryColor }
-                Label { text: "2.4-3"; color: Theme.highlightColor }
+                Label { text: "2.5-1"; color: Theme.highlightColor }
                 Label { text: qsTr("Debug-Modus"); visible: debug; color: Theme.secondaryColor }
             }
 
@@ -41,7 +41,7 @@ Page {
                 wrapMode: Text.Wrap
                 onLinkActivated: Qt.openUrlExternally(link)
                 //: Disclaymer by ACEL
-                text: qsTr("Dës App benotzt Liddtexter vun der ACEL (<a href=\"https://acel.lu\">https://acel.lu</a>) mat Hëllef vun der AcelApi (<a href=\"https://github.com/AcelLuxembourg/AcelApi\">https://github.com/AcelLuxembourg/AcelApi</a>). D'ACEL ass net den Entwéckler an domadder och net Verantwortlech fir den Ënnerhalt vun der App.")
+                text: qsTr("Dës App benotzt Liddtexter vun der ACEL (<a href=\"https://acel.lu\">https://acel.lu</a>) mat Hëllef vun der AcelApi (<a href=\"https://github.com/AcelLuxembourg\">https://github.com/AcelLuxembourg</a>). D'ACEL ass net den Entwéckler an domadder och net Verantwortlech fir den Ënnerhalt vun der App.")
             }
             Separator {
                 width: parent.width
@@ -54,7 +54,7 @@ Page {
                 wrapMode: Text.Wrap
                 onLinkActivated: Qt.openUrlExternally(link)
                 //: Possibilities to report issues
-                text: qsTr("Fehler oder Verbesserungsvirschléi kennen am Jolla Store oder op <a href=\"https://github.com/scharel/harbour-lidderbuch/issues\">GitHub</a> gemellt ginn.<br />© Scharel Clemens 2017")
+                text: qsTr("Fehler oder Verbesserungsvirschléi kennen am Jolla Store oder op <a href=\"https://github.com/scharel/harbour-lidderbuch/issues\">GitHub</a> gemellt ginn.<br />© Scharel Clemens") + " " + new Date().toLocaleString(Qt.locale(), "yyyy")
             }
         }
 

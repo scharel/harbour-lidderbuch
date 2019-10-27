@@ -17,16 +17,16 @@ ApplicationWindow
         property bool interactionHint: value("interactionHint", true)
         property bool eventsHint: value("eventsHint", true)
         property bool songsHint: value("songsHint", true)
-        property bool alternativeAPI: value("alternativeAPI", false)
+        //property bool alternativeAPI: value("alternativeAPI", false) //obsolete
         property date songsUpdate: value("songsUpdate", new Date(0))
         property date eventsUpdate: value("eventsUpdate", new Date(0))
     }
 
-    property var daysLux: ["Sonndeg", "Méindeg", "Dënschdeg", "Mëttwoch", "Donneschdeg", "Freideg", "Samschdeg"]
-    property var monthsLux: ["Januar", "Februar", "Mäerz", "Abrëll", "Mee", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
+    //property var daysLux: ["Sonndeg", "Méindeg", "Dënschdeg", "Mëttwoch", "Donneschdeg", "Freideg", "Samschdeg"]
+    //property var monthsLux: ["Januar", "Februar", "Mäerz", "Abrëll", "Mee", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
 
     property var songModel: JSONListModel {
-        url: appSettings.alternativeAPI ? "https://www.scharel.name/harbour/lidderbuch/songs" : "https://acel.lu/api/v2/songs"
+        url: "http://acel.lu/songs.json"
         name: "songs"
         saveFile: true
     }
@@ -35,7 +35,7 @@ ApplicationWindow
         onLastUpdateChanged: appSettings.songsUpdate = songModel.lastUpdate
     }
 
-    property var eventModel: JSONListModel {
+    /*property var eventModel: JSONListModel {
         url: appSettings.alternativeAPI ? "https://www.scharel.name/harbour/lidderbuch/events" : "https://acel.lu/api/v1/events"
         name: "events"
         saveFile: true
@@ -43,7 +43,7 @@ ApplicationWindow
     Connections {
         target: eventModel
         onLastUpdateChanged: appSettings.eventsUpdate = eventModel.lastUpdate
-    }
+    }*/
 
     signal coverSearchTriggered()
     function doFocusOnSearch() {
@@ -58,12 +58,14 @@ ApplicationWindow
         id: songsPage
         SongsPage { }
     }
-    Component {
+    /*Component {
         id: eventsPage
         EventsPage { }
     }
     initialPage: appSettings.startPage === 2 ? (appSettings.lastPage === 1 ? eventsPage : songsPage) :
                                                (appSettings.startPage === 1 ? eventsPage : songsPage)
+    */
+    initialPage: songsPage
 
     cover: Component { CoverPage{ } }
     allowedOrientations: Orientation.All

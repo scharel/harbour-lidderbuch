@@ -22,12 +22,12 @@ Page {
                 text: qsTr("Astellungen")
                 onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
             }
-            MenuItem {
+            /*MenuItem {
                 //: Pulldown menu item to the events page
                 text: qsTr("ACEL Agenda")
                 //onClicked: pageStack.replace(Qt.resolvedUrl("EventsPage.qml"))
                 onClicked: pageStack.replace(eventsPage)
-            }
+            }*/
         }
 
         header: SearchField {
@@ -120,6 +120,7 @@ Page {
         VerticalScrollDecorator { flickable: listView }
     }
 
+    /*
     TouchInteractionHint {
         id: hint
         Component.onCompleted: if (appSettings.eventsHint) restart()
@@ -134,4 +135,5 @@ Page {
         width: parent.width
         height: parent.height
     }
+    */
 }

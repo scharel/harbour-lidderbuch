@@ -116,6 +116,7 @@ Page {
                 sourceComponent: { song.melody_author? propertyComponent: null }
             }
 
+            /*
             SectionHeader {
                 //: Link to the website containing the songtext
                 text: qsTr("Link")
@@ -144,6 +145,7 @@ Page {
                 //: Text is already in clipboard
                 text: qsTr("(An der Tëschenoflag)")
             }
+            */
         }
 
         ScrollDecorator {  }

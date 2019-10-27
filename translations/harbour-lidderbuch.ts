@@ -9,22 +9,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Dës App benotzt Liddtexter vun der ACEL (&lt;a href=&quot;https://acel.lu&quot;&gt;https://acel.lu&lt;/a&gt;) mat Hëllef vun der AcelApi (&lt;a href=&quot;https://github.com/AcelLuxembourg/AcelApi&quot;&gt;https://github.com/AcelLuxembourg/AcelApi&lt;/a&gt;). D&apos;ACEL ass net den Entwéckler an domadder och net Verantwortlech fir den Ënnerhalt vun der App.</source>
-        <extracomment>Disclaymer by ACEL</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fehler oder Verbesserungsvirschléi kennen am Jolla Store oder op &lt;a href=&quot;https://github.com/scharel/harbour-lidderbuch/issues&quot;&gt;GitHub&lt;/a&gt; gemellt ginn.&lt;br /&gt;© Scharel Clemens 2017</source>
-        <extracomment>Possibilities to report issues</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Versioun</source>
         <extracomment>App version</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Debug-Modus</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dës App benotzt Liddtexter vun der ACEL (&lt;a href=&quot;https://acel.lu&quot;&gt;https://acel.lu&lt;/a&gt;) mat Hëllef vun der AcelApi (&lt;a href=&quot;https://github.com/AcelLuxembourg&quot;&gt;https://github.com/AcelLuxembourg&lt;/a&gt;). D&apos;ACEL ass net den Entwéckler an domadder och net Verantwortlech fir den Ënnerhalt vun der App.</source>
+        <extracomment>Disclaymer by ACEL</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fehler oder Verbesserungsvirschléi kennen am Jolla Store oder op &lt;a href=&quot;https://github.com/scharel/harbour-lidderbuch/issues&quot;&gt;GitHub&lt;/a&gt; gemellt ginn.&lt;br /&gt;© Scharel Clemens</source>
+        <extracomment>Possibilities to report issues</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -124,21 +124,6 @@
     <message>
         <source>Melodie</source>
         <extracomment>Melody author</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Link</source>
-        <extracomment>Link to the website containing the songtext</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>An d&apos;Tëschenoflag kopéieren</source>
-        <extracomment>Copy to clipboard</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>(An der Tëschenoflag)</source>
-        <extracomment>Text is already in clipboard</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -270,35 +255,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Allgemeng</source>
-        <extracomment>General settings</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Startsäit</source>
-        <extracomment>Starting page of the app</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Lidderbuch</source>
-        <extracomment>Songtexts
-----------
-Section of the song text settings</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Agenda</source>
-        <extracomment>Events</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Alternativ API</source>
-        <extracomment>Alternative API</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A gewësse Fäll kann et zu Problemer mat der API kommen. Sollten sech d&apos;Liddertexter oder d&apos;Agenda net aktualiséieren loossen, kann dëst ausprobéiert ginn.</source>
-        <extracomment>Use this if you have problems with the API</extracomment>
+        <extracomment>Section to update the songs</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -376,8 +334,8 @@ Section of the song text settings</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Lescht benotzten Säit</source>
-        <extracomment>Last used</extracomment>
+        <source>Ausgesinn</source>
+        <extracomment>Section of the song text settings</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -399,11 +357,6 @@ Section of the song text settings</extracomment>
     <message>
         <source>Astellungen</source>
         <extracomment>Pulldown menu item to the settings page</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>ACEL Agenda</source>
-        <extracomment>Pulldown menu item to the events page</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -429,11 +382,6 @@ Section of the song text settings</extracomment>
     <message>
         <source>An den Astellungen kennen d&apos;Lidder nei erofgeluede ginn.</source>
         <extracomment>Use the settings page to download content</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>ACEL Agenda uweisen</source>
-        <extracomment>Show the ACEL events</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>
