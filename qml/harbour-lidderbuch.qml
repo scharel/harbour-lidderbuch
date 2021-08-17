@@ -26,7 +26,7 @@ ApplicationWindow
     //property var monthsLux: ["Januar", "Februar", "Mäerz", "Abrëll", "Mee", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
 
     property var songModel: JSONListModel {
-        url: "http://acel.lu/songs.json"
+        url: "https://acel.lu/songs.json"
         name: "songs"
         saveFile: true
     }

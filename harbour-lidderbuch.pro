@@ -14,7 +14,8 @@ TARGET = harbour-lidderbuch
 
 CONFIG += sailfishapp
 
-SOURCES += src/harbour-lidderbuch.cpp
+SOURCES += src/harbour-lidderbuch.cpp \
+    src/wget.cpp
 
 OTHER_FILES += qml/harbour-lidderbuch.qml \
     qml/cover/CoverPage.qml \
@@ -46,4 +47,5 @@ DISTFILES += \
     qml/pages/EventPage.qml \
     qml/pages/SongsPage.qml
 
-HEADERS +=
+HEADERS += \
+    src/wget.h

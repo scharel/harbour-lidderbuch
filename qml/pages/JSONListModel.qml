@@ -76,7 +76,7 @@ ListModel {
                     lastUpdate = new Date()
                 }
                 else {
-                    console.log("Error loading " + url + " - " + apiReq.status)
+                    console.log("Error loading " + url + " - " + apiReq.statusText + "(" + apiReq.status + ")")
                    //lastUpdate = new Date(0)
                 }
                 status = apiReq.status
