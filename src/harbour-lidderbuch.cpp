@@ -4,6 +4,7 @@
 #include <QQmlContext>
 #include <QGuiApplication>
 #include <QStandardPaths>
+#include <QDir>
 
 #include "NetworkRequest.h"
 
