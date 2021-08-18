@@ -24,7 +24,7 @@ Page {
                 spacing: Theme.paddingMedium
                 //: App version
                 Label { text: qsTr("Versioun"); color: Theme.primaryColor }
-                Label { text: "2.5-1"; color: Theme.highlightColor }
+                Label { text: version; color: Theme.highlightColor }
                 Label { text: qsTr("Debug-Modus"); visible: debug; color: Theme.secondaryColor }
             }
 

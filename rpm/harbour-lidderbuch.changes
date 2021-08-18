@@ -8,6 +8,12 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Aug 18 2021 Scharel Clemens <harbour-lidderbuch@scharel.rocks> 2.6-0
+- Fix song download
+- Add "way" as description of the title to the song page
+- Use DetailItem on the DetailsPage
+- Use IconButton on the DetailsPage to add link to the clipboard
+
 * Sun Oct 27 2019 Scharel Clemens <harbour-lidderbuch@scharel.rocks> 2.5-1
 - Do not show the link as the sites are not available anymore
 

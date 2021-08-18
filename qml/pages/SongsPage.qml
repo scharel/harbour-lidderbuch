@@ -16,7 +16,7 @@ Page {
         anchors.fill: parent
 
         PullDownMenu {
-            busy: songModel.busy
+            busy: api.busy
             MenuItem {
                 //: Pulldown menu item to the settings page
                 text: qsTr("Astellungen")
@@ -114,7 +114,7 @@ Page {
         BusyIndicator {
             anchors.centerIn: parent
             size: BusyIndicatorSize.Large
-            running: songModel.count === 0 && songModel.busy
+            running: songModel.count === 0 && api.busy
         }
 
         VerticalScrollDecorator { flickable: listView }

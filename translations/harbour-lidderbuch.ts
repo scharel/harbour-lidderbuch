@@ -126,6 +126,11 @@
         <extracomment>Melody author</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Link</source>
+        <extracomment>Link to the website containing the songtext</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>EventPage</name>

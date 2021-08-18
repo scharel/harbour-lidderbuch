@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import Nemo.Configuration 1.0
+import harbour.lidderbuch 1.0
 import "pages"
 import "cover"
 
@@ -25,6 +26,9 @@ ApplicationWindow
     //property var daysLux: ["Sonndeg", "Méindeg", "Dënschdeg", "Mëttwoch", "Donneschdeg", "Freideg", "Samschdeg"]
     //property var monthsLux: ["Januar", "Februar", "Mäerz", "Abrëll", "Mee", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
 
+
+    property var api: NetworkRequest { }
+
     property var songModel: JSONListModel {
         url: "https://acel.lu/songs.json"
         name: "songs"
@@ -34,6 +38,21 @@ ApplicationWindow
         target: songModel
         onLastUpdateChanged: appSettings.songsUpdate = songModel.lastUpdate
     }
+    Connections {
+        target: api
+        onFinishedChanged: {
+            if (api.finished && api.error === 0) {
+                console.log("Successfully loaded " + songModel.url)
+                songModel.json = String(api.data)
+            }
+        }
+        onErrorChanged: {
+            if (api.error !== 0) {
+                console.log("Error loading " + songModel.url + " - " + api.errorString + " - (" + api.error + ")")
+            }
+        }
+    }
+
 
     /*property var eventModel: JSONListModel {
         url: appSettings.alternativeAPI ? "https://www.scharel.name/harbour/lidderbuch/events" : "https://acel.lu/api/v1/events"
