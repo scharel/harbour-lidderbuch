@@ -104,12 +104,10 @@ Page {
                 x: Theme.horizontalPageMargin
                 width: column.width - 2 * Theme.horizontalPageMargin
                 visible: song.url
-                Label {
+                LinkedLabel {
                     width: parent.width - clipboardButton.width
-                    linkColor: Theme.primaryColor
                     wrapMode: Text.Wrap
-                    onLinkActivated: Qt.openUrlExternally(link)
-                    text: visible? "<a href=\"" + song.url + "\">" + song.url + "</a>": ""
+                    plainText: visible? song.url: ""
                 }
                 IconButton {
                     id: clipboardButton

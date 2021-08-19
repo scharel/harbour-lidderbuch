@@ -23,8 +23,8 @@ Page {
                 x: Theme.horizontalPageMargin
                 spacing: Theme.paddingMedium
                 //: App version
-                Label { text: qsTr("Versioun"); color: Theme.primaryColor }
-                Label { text: version; color: Theme.highlightColor }
+                Label { text: qsTr("Versioun"); color: Theme.highlightColor }
+                Label { text: version; color: Theme.secondaryHighlightColor }
                 Label { text: qsTr("Debug-Modus"); visible: debug; color: Theme.secondaryColor }
             }
 
@@ -37,7 +37,8 @@ Page {
             Label {
                 x: Theme.horizontalPageMargin
                 width: parent.width - x
-                linkColor: Theme.highlightColor
+                color: Theme.highlightColor
+                linkColor: Theme.primaryColor
                 wrapMode: Text.Wrap
                 onLinkActivated: Qt.openUrlExternally(link)
                 //: Disclaymer by ACEL
@@ -50,11 +51,20 @@ Page {
             Label {
                 x: Theme.horizontalPageMargin
                 width: parent.width - x
-                linkColor: Theme.highlightColor
+                color: Theme.highlightColor
+                linkColor: Theme.primaryColor
                 wrapMode: Text.Wrap
                 onLinkActivated: Qt.openUrlExternally(link)
                 //: Possibilities to report issues
-                text: qsTr("Fehler oder Verbesserungsvirschléi kennen am Jolla Store oder op <a href=\"https://github.com/scharel/harbour-lidderbuch/issues\">GitHub</a> gemellt ginn.<br />© Scharel Clemens") + " " + new Date().toLocaleString(Qt.locale(), "yyyy")
+                text: qsTr("Fehler oder Verbesserungsvirschléi kennen am Jolla Store oder op <a href=\"https://github.com/scharel/harbour-lidderbuch/issues\">GitHub</a> gemellt ginn.")
+            }
+            Label {
+                x: Theme.horizontalPageMargin
+                width: parent.width - x
+                color: Theme.secondaryColor
+                wrapMode: Text.Wrap
+                //: Copyright note
+                text: qsTr("© Scharel Clemens") + new Date().toLocaleString(Qt.locale(), " yyyy")
             }
         }
 

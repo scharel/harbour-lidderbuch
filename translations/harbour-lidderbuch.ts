@@ -23,8 +23,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Fehler oder Verbesserungsvirschléi kennen am Jolla Store oder op &lt;a href=&quot;https://github.com/scharel/harbour-lidderbuch/issues&quot;&gt;GitHub&lt;/a&gt; gemellt ginn.&lt;br /&gt;© Scharel Clemens</source>
+        <source>Fehler oder Verbesserungsvirschléi kennen am Jolla Store oder op &lt;a href=&quot;https://github.com/scharel/harbour-lidderbuch/issues&quot;&gt;GitHub&lt;/a&gt; gemellt ginn.</source>
         <extracomment>Possibilities to report issues</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>© Scharel Clemens</source>
+        <extracomment>Copyright note</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>

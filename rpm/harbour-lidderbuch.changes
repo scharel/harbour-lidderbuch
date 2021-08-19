@@ -8,6 +8,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Thu Aug 19 2021 Scharel Clemens <harbour-lidderbuch@scharel.rocks> 2.6-1
+- Fix data update time in settings
+- Minimal visual improvements
+
 * Wed Aug 18 2021 Scharel Clemens <harbour-lidderbuch@scharel.rocks> 2.6-0
 - Fix song download
 - Add "way" as description of the title to the song page

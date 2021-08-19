@@ -18,8 +18,12 @@ ListModel {
             filePut.open("PUT", file)
             filePut.send(json)
         }
-        lastUpdate = new Date()
         refresh()
+    }
+
+    function setJson(_json) {
+        json = _json
+        lastUpdate = new Date()
     }
 
     function flush() {

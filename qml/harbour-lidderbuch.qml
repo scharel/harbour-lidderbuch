@@ -43,7 +43,7 @@ ApplicationWindow
         onFinishedChanged: {
             if (api.finished && api.error === 0) {
                 console.log("Successfully loaded " + songModel.url)
-                songModel.json = String(api.data)
+                songModel.setJson(api.data)
             }
         }
         onErrorChanged: {

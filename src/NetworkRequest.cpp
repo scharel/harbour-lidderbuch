@@ -10,6 +10,7 @@ NetworkRequest::NetworkRequest(QObject *parent) : QObject(parent)
 }
 
 bool NetworkRequest::get(QUrl url) {
+    clear();
     if (mp_reply == NULL) {
         QNetworkRequest request;
         QSslConfiguration sslConfiguration(QSslConfiguration::defaultConfiguration());
@@ -36,15 +37,14 @@ void NetworkRequest::clear() {
         mp_reply->deleteLater();
         mp_reply = NULL;
     }
-    m_data.clear();
     setBusy(false);
     setFinished(false);
+    m_data.clear();
     emit dataChanged();
 }
 
 void NetworkRequest::onFinished() {
     m_data.append(mp_reply->readAll());
-    qDebug() << m_data;
     mp_reply->deleteLater();
     mp_reply = NULL;
     setBusy(false);
