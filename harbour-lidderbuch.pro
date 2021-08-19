@@ -45,8 +45,6 @@ DISTFILES += \
     qml/cover/logo.png \
     qml/pages/DetailsPage.qml \
     rpm/harbour-lidderbuch.changes \
-    qml/pages/EventsPage.qml \
-    qml/pages/EventPage.qml \
     qml/pages/SongsPage.qml
 
 HEADERS += \

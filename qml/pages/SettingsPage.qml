@@ -26,51 +26,6 @@ Page {
                 title: qsTr("Astellungen")
             }
 
-            /* obsolete
-            SectionHeader {
-                //: General settings
-                text: qsTr("Allgemeng")
-            }
-            ComboBox {
-                //: Starting page of the app
-                label: qsTr("Startsäit")
-                currentIndex: appSettings.startPage
-
-                menu: ContextMenu {
-                    //: Songtexts
-                    MenuItem { text: qsTr("Lidderbuch") }
-                    //: Events
-                    MenuItem { text: qsTr("Agenda") }
-                    //: Last used
-                    MenuItem { text: qsTr("Lescht benotzten Säit") }
-                    onActivated: {
-                        appSettings.setValue("startPage", index)
-                        switch(appSettings.startPage) {
-                        case(0):
-                            pageStack.clear()
-                            pageStack.push(songsPage)
-                            break;
-                        case(1):
-                            pageStack.clear()
-                            pageStack.push(eventsPage)
-                            break;
-                        default:
-                            pageStack.pop()
-                            break;
-                        }
-                    }
-                }
-            }
-            TextSwitch {
-                //: Alternative API
-                text: qsTr("Alternativ API")
-                //: Use this if you have problems with the API
-                description: qsTr("A gewësse Fäll kann et zu Problemer mat der API kommen. Sollten sech d'Liddertexter oder d'Agenda net aktualiséieren loossen, kann dëst ausprobéiert ginn.")
-                checked: appSettings.alternativeAPI
-                onCheckedChanged: appSettings.setValue("alternativeAPI", checked)
-            }
-            */
-
             SectionHeader {
                 //: Section to update the songs
                 text: qsTr("Lidderbuch")
@@ -78,6 +33,21 @@ Page {
             Column {
                 width: parent.width
                 spacing: Theme.paddingMedium
+                Label {
+                    width: parent.width - 2 * x
+                    x: Theme.horizontalPageMargin
+                    color: Theme.secondaryHighlightColor
+                    wrapMode: Text.Wrap
+                    //: Update description
+                    text: qsTr("Wann néi Lidder vun der ACEL verëffentlecht gi sinn, kennen déi hei erofgeluede ginn.")
+                }
+                Button {
+                    //: Update song texts
+                    text: qsTr("Lo aktualiséierten")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    enabled: !api.busy
+                    onClicked: songModel.update()
+                }
                 Row {
                     width: parent.width
                     spacing: Theme.paddingMedium
@@ -91,35 +61,28 @@ Page {
                         Timer {
                             id: songErrorTimer;
                             interval: 2000;
-                            onTriggered: songModel.status = 200
+                            //onTriggered: songModel.status = 200
                         }
                         Connections {
-                            target: songModel;
-                            onStatusChanged: songModel.status === 200 ? songErrorTimer.stop() : songErrorTimer.restart()
+                            target: api
+                            onErrorChanged: api.error === 0 ? songErrorTimer.stop() : songErrorTimer.restart()
                         }
                         text: songErrorTimer.running ?
                                   //: Error               //: Status
-                                  qsTr("Feeler") + " (" + qsTr("Status") + " " + songModel.status + ")" :
+                                  qsTr("Feeler") + " (" + qsTr("Status") + " " + api.error + ")" :
                                   (appSettings.songsUpdate.valueOf() === 0 ?
                                       //: never
                                       qsTr("nach ni") :
                                       appSettings.songsUpdate.toLocaleString(Qt.locale(), "dd.MM.yyyy hh:mm:ss"))
-                        visible: !songModel.busy
+                        visible: !api.busy
                         color: Theme.secondaryHighlightColor
                         width: parent.width - x
                         wrapMode: Text.Wrap
                     }
                     BusyIndicator {
-                        running: songModel.busy
+                        running: api.busy
                         size: BusyIndicatorSize.Small
                     }
-                }
-                Button {
-                    //: Update song texts
-                    text: qsTr("Lo aktualiséierten")
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    enabled: !songModel.busy
-                    onClicked: songModel.update()
                 }
             }
 

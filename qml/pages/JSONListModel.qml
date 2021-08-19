@@ -71,6 +71,7 @@ ListModel {
     }
 
     function update() {
+        console.log("Downloading " + url)
         api.get(url)
     }
 

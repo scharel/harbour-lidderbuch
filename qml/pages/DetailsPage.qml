@@ -106,11 +106,13 @@ Page {
                 visible: song.url
                 LinkedLabel {
                     width: parent.width - clipboardButton.width
+                    anchors.verticalCenter: parent.verticalCenter
                     wrapMode: Text.Wrap
                     plainText: visible? song.url: ""
                 }
                 IconButton {
                     id: clipboardButton
+                    anchors.verticalCenter: parent.verticalCenter
                     icon.source: "image://theme/icon-m-clipboard?" + (pressed ? Theme.highlightColor : Theme.primaryColor)
                     enabled: Clipboard.text !== song.url
                     onClicked: Clipboard.text = song.url

@@ -8,6 +8,11 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Thu Aug 19 2021 Scharel Clemens <harbour-lidderbuch@scharel.rocks> 2.6-2
+- Fix download progress indication in settings
+- Add decription text to download in settings
+- Remove leftovers from events feature
+
 * Thu Aug 19 2021 Scharel Clemens <harbour-lidderbuch@scharel.rocks> 2.6-1
 - Fix data update time in settings
 - Minimal visual improvements

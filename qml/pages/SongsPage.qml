@@ -7,7 +7,6 @@ Page {
     onStatusChanged: {
         if (status === PageStatus.Active) {
             appSettings.setValue("songsHint", false)
-            appSettings.setValue("lastPage", 0)
         }
     }
 
@@ -22,12 +21,6 @@ Page {
                 text: qsTr("Astellungen")
                 onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
             }
-            /*MenuItem {
-                //: Pulldown menu item to the events page
-                text: qsTr("ACEL Agenda")
-                //onClicked: pageStack.replace(Qt.resolvedUrl("EventsPage.qml"))
-                onClicked: pageStack.replace(eventsPage)
-            }*/
         }
 
         header: SearchField {
@@ -41,13 +34,6 @@ Page {
                 target: appWindow
                 onCoverSearchTriggered: forceActiveFocus()
             }
-            /*Connections {
-                target: firstPage
-                onStatusChanged: if (status === PageStatus.Active) {
-                                     focus = false
-                                     text = ""
-                                 }
-            }*/
 
             EnterKey.iconSource: "image://theme/icon-m-enter-close"
             EnterKey.onClicked: focus = false
@@ -119,21 +105,4 @@ Page {
 
         VerticalScrollDecorator { flickable: listView }
     }
-
-    /*
-    TouchInteractionHint {
-        id: hint
-        Component.onCompleted: if (appSettings.eventsHint) restart()
-        interactionMode: TouchInteraction.Pull
-        direction: TouchInteraction.Down
-    }
-    InteractionHintLabel {
-        //: Show the ACEL events
-        text: qsTr("ACEL Agenda uweisen")
-        opacity: hint.running ? 1.0 : 0.0
-        Behavior on opacity { FadeAnimation {} }
-        width: parent.width
-        height: parent.height
-    }
-    */
 }
