@@ -21,6 +21,7 @@ Page {
 
             Row {
                 x: Theme.horizontalPageMargin
+                width: parent.width - 2 * x
                 spacing: Theme.paddingMedium
                 //: App version
                 Label { text: qsTr("Versioun"); color: Theme.highlightColor }
@@ -36,7 +37,7 @@ Page {
             }
             Label {
                 x: Theme.horizontalPageMargin
-                width: parent.width - x
+                width: parent.width - 2 * x
                 color: Theme.highlightColor
                 linkColor: Theme.primaryColor
                 wrapMode: Text.Wrap
@@ -50,7 +51,7 @@ Page {
             }
             Label {
                 x: Theme.horizontalPageMargin
-                width: parent.width - x
+                width: parent.width - 2 * x
                 color: Theme.highlightColor
                 linkColor: Theme.primaryColor
                 wrapMode: Text.Wrap
@@ -60,7 +61,7 @@ Page {
             }
             Label {
                 x: Theme.horizontalPageMargin
-                width: parent.width - x
+                width: parent.width - 2 * x
                 color: Theme.secondaryColor
                 wrapMode: Text.Wrap
                 //: Copyright note
