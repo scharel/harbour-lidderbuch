@@ -32,7 +32,7 @@ Page {
             }
             Column {
                 width: parent.width
-                spacing: Theme.paddingMedium
+                spacing: Theme.paddingLarge
                 Label {
                     width: parent.width - 2 * x
                     x: Theme.horizontalPageMargin
