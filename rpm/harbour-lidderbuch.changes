@@ -8,6 +8,21 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Thu Aug 19 2021 Scharel Clemens <harbour-lidderbuch@scharel.rocks> 2.6-2
+- Fix download progress indication in settings
+- Add decription text to download in settings
+- Remove leftovers from events feature
+
+* Thu Aug 19 2021 Scharel Clemens <harbour-lidderbuch@scharel.rocks> 2.6-1
+- Fix data update time in settings
+- Minimal visual improvements
+
+* Wed Aug 18 2021 Scharel Clemens <harbour-lidderbuch@scharel.rocks> 2.6-0
+- Fix song download
+- Add "way" as description of the title to the song page
+- Use DetailItem on the DetailsPage
+- Use IconButton on the DetailsPage to add link to the clipboard
+
 * Sun Oct 27 2019 Scharel Clemens <harbour-lidderbuch@scharel.rocks> 2.5-1
 - Do not show the link as the sites are not available anymore
 

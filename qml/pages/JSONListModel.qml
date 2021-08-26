@@ -8,11 +8,23 @@ ListModel {
     property string name
     property string file: StandardPaths.data + "/" + name + ".json"
     property bool saveFile: false
-    property bool busy: false
-    property int status: 200
+    property bool busy: api.busy
+    property int status: api.error
     property date lastUpdate: new Date(0)
 
-    onJsonChanged: refresh()
+    onJsonChanged: {
+        if (saveFile) {
+            var filePut = new XMLHttpRequest
+            filePut.open("PUT", file)
+            filePut.send(json)
+        }
+        refresh()
+    }
+
+    function setJson(_json) {
+        json = _json
+        lastUpdate = new Date()
+    }
 
     function flush() {
         json = ""
@@ -59,31 +71,8 @@ ListModel {
     }
 
     function update() {
-        busy = true
-        var apiReq = new XMLHttpRequest
-        apiReq.open("GET", url, true)
-        apiReq.setRequestHeader('User-Agent', 'SailfishOS/harbour-lidderbuch')
-        apiReq.onreadystatechange = function() {
-            if (apiReq.readyState === XMLHttpRequest.DONE) {
-                if (apiReq.status === 200) {
-                    console.log("Successfully loaded " + url)
-                    json = apiReq.responseText
-                    if (saveFile) {
-                        var filePut = new XMLHttpRequest
-                        filePut.open("PUT", file)
-                        filePut.send(json)
-                    }
-                    lastUpdate = new Date()
-                }
-                else {
-                    console.log("Error loading " + url + " - " + apiReq.status)
-                   //lastUpdate = new Date(0)
-                }
-                status = apiReq.status
-                busy = false
-            }
-        }
-        apiReq.send()
+        console.log("Downloading " + url)
+        api.get(url)
     }
 
     Component.onCompleted: {

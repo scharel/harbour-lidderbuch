@@ -34,68 +34,47 @@ Page {
                 title: qsTr("Detailer iwwer d'Lidd")
             }
 
-            Component {
-                id: propertyComponent
-
-                Row {
-                    width: column.width
-                    spacing: Theme.paddingMedium
-                    x: Theme.horizontalPageMargin
-                    Label {
-                        id: propertyLabel
-                        text: propertyDesc
-                        color: Theme.secondaryColor
-                    }
-                    Label {
-                        text: propertyValue
-                        wrapMode: Text.Wrap
-                        width: column.width - Theme.horizontalPageMargin - propertyLabel.contentWidth - Theme.paddingMedium
-                    }
-                }
-            }
-
-
-            Loader {
+            DetailItem {
                 //: Song name
-                property string propertyDesc: qsTr("Titel")
-                property var propertyValue: song.name
-                sourceComponent: { song.name? propertyComponent: null }
+                label: qsTr("Titel")
+                value: song.name? song.name: ""
+                visible: value
             }
-            Loader {
+            DetailItem {
                 //: Song number
-                property string propertyDesc: qsTr("Nummer")
-                property var propertyValue: song.number
-                sourceComponent: { song.number? propertyComponent: null }
+                label: qsTr("Nummer")
+                value: song.number? song.number: ""
+                visible: value
             }
-            Loader {
+            DetailItem {
                 //: Way of the melody
-                property string propertyDesc: qsTr("Aart aweis")
-                property var propertyValue: song.way
-                sourceComponent: { song.way? propertyComponent: null }
+                label: qsTr("Aart aweis")
+                value: song.way? song.way: ""
+                visible: value
             }
-            Loader {
+            DetailItem {
                 //: Language of the text
-                property string propertyDesc: qsTr("Sprooch")
-                property var propertyValue: language[song.language]? language[song.language]: song.language
-                sourceComponent: { song.language? propertyComponent: null }
+                label: qsTr("Sprooch")
+                value: song.language? language[song.language]? language[song.language]: song.language: ""
+                visible: value
             }
-            Loader {
+            DetailItem {
                 //: Category of the song
-                property string propertyDesc: qsTr("Kategorie")
-                property var propertyValue: song.category
-                sourceComponent: { song.category? propertyComponent: null }
+                label: qsTr("Kategorie")
+                value: song.category? song.category: ""
+                visible: value
             }
-            Loader {
+            DetailItem {
                 //: Release year of the song
-                property string propertyDesc: qsTr("Joer")
-                property var propertyValue: song.year
-                sourceComponent: { song.year? propertyComponent: null }
+                label: qsTr("Joer")
+                value: song.year? song.year: ""
+                visible: value
             }
-            Loader {
+            DetailItem {
                 //: Last update to the content
-                property string propertyDesc: qsTr("Aktualiséiert")
-                property var propertyValue: new Date(song.update_time*1000).toLocaleDateString(Qt.locale(), "dd.MM.yyyy")
-                sourceComponent: { song.update_time? propertyComponent: null }
+                label: qsTr("Aktualiséiert")
+                value: song.update_time? new Date(song.update_time*1000).toLocaleDateString(Qt.locale(), "dd.MM.yyyy"): ""
+                visible: value
             }
 
             SectionHeader {
@@ -103,49 +82,42 @@ Page {
                 text: qsTr("Auteuren")
                 visible: (song.lyrics_author || song.melody_author)? true: false
             }
-            Loader {
+            DetailItem {
                 //: Lyrics author
-                property string propertyDesc: qsTr("Text")
-                property var propertyValue: song.lyrics_author
-                sourceComponent: { song.lyrics_author? propertyComponent: null }
+                label: qsTr("Text")
+                value: song.lyrics_author? song.lyrics_author: ""
+                visible: value
             }
-            Loader {
+            DetailItem {
                 //: Melody author
-                property string propertyDesc: qsTr("Melodie")
-                property var propertyValue: song.melody_author
-                sourceComponent: { song.melody_author? propertyComponent: null }
+                label: qsTr("Melodie")
+                value: song.melody_author? song.melody_author: ""
+                visible: value
             }
 
-            /*
             SectionHeader {
                 //: Link to the website containing the songtext
                 text: qsTr("Link")
                 visible: song.url? true: false
             }
-            Label {
-                width: column.width - 2 * Theme.horizontalPageMargin
+            Row {
                 x: Theme.horizontalPageMargin
-                linkColor: Theme.highlightColor
-                wrapMode: Text.Wrap
-                visible: song.url? true: false
-                onLinkActivated: Qt.openUrlExternally(link)
-                text: "<a href=\"" + song.url + "\">" + song.url + "</a>"
+                width: column.width - 2 * Theme.horizontalPageMargin
+                visible: song.url
+                LinkedLabel {
+                    width: parent.width - clipboardButton.width
+                    anchors.verticalCenter: parent.verticalCenter
+                    wrapMode: Text.Wrap
+                    plainText: visible? song.url: ""
+                }
+                IconButton {
+                    id: clipboardButton
+                    anchors.verticalCenter: parent.verticalCenter
+                    icon.source: "image://theme/icon-m-clipboard?" + (pressed ? Theme.highlightColor : Theme.primaryColor)
+                    enabled: Clipboard.text !== song.url
+                    onClicked: Clipboard.text = song.url
+                }
             }
-            Button {
-                anchors.horizontalCenter: parent.horizontalCenter
-                visible: Clipboard.text !== song.url
-                onClicked: Clipboard.text = song.url
-                //: Copy to clipboard
-                text: qsTr("An d'Tëschenoflag kopéieren")
-            }
-            Label {
-                anchors.horizontalCenter: parent.horizontalCenter
-                color: Theme.secondaryColor
-                visible: Clipboard.text === song.url
-                //: Text is already in clipboard
-                text: qsTr("(An der Tëschenoflag)")
-            }
-            */
         }
 
         ScrollDecorator {  }

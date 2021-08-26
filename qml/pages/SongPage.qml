@@ -97,6 +97,7 @@ Page {
 
         header: PageHeader {
             title: song.name
+            description: song.way? song.way: ""
         }
 
         model: song.paragraphs

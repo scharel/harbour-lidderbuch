@@ -23,8 +23,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Fehler oder Verbesserungsvirschléi kennen am Jolla Store oder op &lt;a href=&quot;https://github.com/scharel/harbour-lidderbuch/issues&quot;&gt;GitHub&lt;/a&gt; gemellt ginn.&lt;br /&gt;© Scharel Clemens</source>
+        <source>Fehler oder Verbesserungsvirschléi kennen am Jolla Store oder op &lt;a href=&quot;https://github.com/scharel/harbour-lidderbuch/issues&quot;&gt;GitHub&lt;/a&gt; gemellt ginn.</source>
         <extracomment>Possibilities to report issues</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>© Scharel Clemens</source>
+        <extracomment>Copyright note</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -126,119 +131,9 @@
         <extracomment>Melody author</extracomment>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>EventPage</name>
     <message>
-        <source>Beschreiwung</source>
-        <extracomment>description</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Locatioun</source>
-        <extracomment>location</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Zäit</source>
-        <extracomment>time</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Auer</source>
-        <extracomment>o&apos;clock</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Organisateuren</source>
-        <extracomment>organizers</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Facebook</source>
-        <extracomment>Visit the organizers social network page</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>op acel.lu</source>
-        <extracomment>Visit the organizers website on acel.lu</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Websäit</source>
-        <extracomment>Visit the organizers website</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>bis</source>
-        <extracomment>until</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>An de Kalenner importéieren</source>
-        <extracomment>Import the event into the calendar</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Websäit opmaachen</source>
-        <extracomment>Pulldown menu item to visit the event website</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>EventsPage</name>
-    <message>
-        <source>Aktualiséieren</source>
-        <extracomment>Pulldown menu item to update the events</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Aktualiséiert</source>
-        <extracomment>Updated</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Näischt an der Agenda</source>
-        <extracomment>No envent available</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Erof zéien vir ze Aktualiséieren</source>
-        <extracomment>Pull down to update the content</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Feeler</source>
-        <extracomment>Error //: Status</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Status</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>nach ni</source>
-        <extracomment>never</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>ACEL Agenda</source>
-        <extracomment>Header of the events page</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>ACEL Lidderbuch</source>
-        <extracomment>Pulldown menu item to the songs page</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Astellungen</source>
-        <extracomment>Pulldown menu item to the settings page</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>ACEL Lidderbuch uweisen</source>
-        <extracomment>Show the ACEL songs</extracomment>
+        <source>Link</source>
+        <extracomment>Link to the website containing the songtext</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -336,6 +231,11 @@
     <message>
         <source>Ausgesinn</source>
         <extracomment>Section of the song text settings</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wann néi Lidder vun der ACEL verëffentlecht gi sinn, kennen déi hei erofgeluede ginn.</source>
+        <extracomment>Update description</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>
